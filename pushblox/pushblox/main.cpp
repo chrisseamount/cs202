@@ -2,9 +2,12 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
+	sf::RenderWindow window(sf::VideoMode(800, 800), "pushBlox");
+	sf::CircleShape shape(350.f);
+
+	//Platform position
 	shape.setFillColor(sf::Color::Green);
+	shape.setPosition(50.f, 50.f);
 
 	while (window.isOpen())
 	{
