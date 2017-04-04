@@ -69,7 +69,6 @@ artifacts/
 *.svclog
 *.scc
 
-*.sln
 
 # Chutzpah Test files
 _Chutzpah*
@@ -252,3 +251,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+*.dll
+
+#SFML libs
+pushblox/pushblox/SFML-2.4.2-windows-vc14-32-bit/*
