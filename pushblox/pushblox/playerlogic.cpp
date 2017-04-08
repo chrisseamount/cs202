@@ -15,6 +15,8 @@ int main()
 	sf::CircleShape triangle(20,3);
 	triangle.setFillColor(sf::Color::Red);
 	triangle.setPosition(100, 100);
+	double xpos = 100;
+	double ypos = 100;
 	triangle.setRotation(90);
 
 	window.setFramerateLimit(30);
@@ -51,14 +53,17 @@ int main()
 					if (event.key.code == sf::Keyboard::Left)
 					{
 						triangle.move(-10,0);
+						xpos += 10;
 					}
 					if (event.key.code == sf::Keyboard::Right)
 					{
 						triangle.move(10, 0);
+						xpos -= 10;
 					}
 					if (event.key.code == sf::Keyboard::Up)
 					{
 						triangle.move(0, -10);
+						ypos += 10;
 					}
 					if (event.key.code == sf::Keyboard::Down)
 					{
