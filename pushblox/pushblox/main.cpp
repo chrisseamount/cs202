@@ -1,13 +1,39 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <iostream>
+#include "C:\Users\arparker5\cs202\pushblox\pushblox\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\include\SFML\Graphics\CircleShape.hpp"
+#include "C:\Users\arparker5\cs202\pushblox\pushblox\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\include\SFML\Graphics\Transformable.hpp"
+#include <stdio.h>
+#include <math.h>
+//#include <Transformable.hpp>
+//#include <SFML/CircleShape.hpp>
 
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
-	sf::CircleShape shape(50.f);
-	shape.setFillColor(sf::Color::Red);
+	sf::CircleShape triangle(20,3);
+	triangle.setFillColor(sf::Color::Red);
+	triangle.setPosition(100, 100);
+	triangle.setRotation(90);
+
+	window.setFramerateLimit(30);
+	window.setVerticalSyncEnabled(true);
+
+	/*class Player
+	{
+	public:
+		void move(int x, int y)
+		{
+			
+		}
+	private:
+		float _xpos;
+		float _ypos;
+	};*/
+
+	double relmousex;
+	double relmousey;
 
 	while (window.isOpen())
 	{
@@ -16,26 +42,42 @@ int main()
 		while (window.pollEvent(event))
 		{
 
+			//relmousex = 
+
+
 			switch (event.type)
 			{
 				case sf::Event::KeyPressed:
-					if (event.key.code == sf::Keyboard::Escape)
+					if (event.key.code == sf::Keyboard::Left)
 					{
-						clr = !clr;
-						//shape.setFillColor(sf::Color::Blue);
+						triangle.move(-10,0);
 					}
+					if (event.key.code == sf::Keyboard::Right)
+					{
+						triangle.move(10, 0);
+					}
+					if (event.key.code == sf::Keyboard::Up)
+					{
+						triangle.move(0, -10);
+					}
+					if (event.key.code == sf::Keyboard::Down)
+					{
+						triangle.move(0, 10);
+					}
+					if (event.key.code == sf::Keyboard::Escape)
+						window.close();
+					/*if (event.key.code == (sf::Keyboard::Left)) {
+						triangle.move(150 * 0.1 * -1, 0);
+					}
+					else if (event.key.code == (sf::Keyboard::Right)) {
+						triangle.move(150 * 0.1, 0);
+					}*/
+
+
 					break;
 
 				case sf::Event::Closed:
 					window.close();
-			}
-
-			if (clr)
-			{
-				shape.setFillColor(sf::Color::Red);
-			}
-			else {
-				shape.setFillColor(sf::Color::Blue);
 			}
 
 			if (event.type == sf::Event::Closed)
@@ -43,7 +85,7 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
+		window.draw(triangle);
 		window.display();
 	}
 
