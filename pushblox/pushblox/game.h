@@ -15,7 +15,5 @@ private:
 	enum GameState { Uninitialized, Loading, Menu, Playing, Exiting };
 	GameState _gameState = Uninitialized;
 	void gameLoop();
-	
-	
 	sf::RenderWindow _mainWindow;
 };

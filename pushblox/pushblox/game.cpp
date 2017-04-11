@@ -15,10 +15,9 @@ void Game::start()
 	}
 
 	
-	while (!isExiting())
-	{
-		gameLoop();
-	}
+	
+	gameLoop();
+	
 
 	
 }
