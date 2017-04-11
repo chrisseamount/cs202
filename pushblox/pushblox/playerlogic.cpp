@@ -9,7 +9,6 @@
 //#include <Transformable.hpp>
 //#include <SFML/CircleShape.hpp>
 
-
 void logic()
 {
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
@@ -35,8 +34,8 @@ void logic()
 		float _ypos;
 	};*/
 
-	double relmousex;
-	double relmousey;
+	//double relmousex;
+	//double relmousey;
 
 	while (window.isOpen())
 	{
