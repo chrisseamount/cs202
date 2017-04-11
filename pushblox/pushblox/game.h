@@ -8,12 +8,12 @@
 class Game
 {
 public:
-	static void start();
+	void start();
 	
 private:
 	enum GameState { Uninitialized, Loading, Menu, Playing, Exiting };
-	static void gameLoop();
-	static bool isExiting();
-	static GameState _gameState;
-	static sf::RenderWindow _mainWindow;
+	void gameLoop();
+	bool isExiting();
+	GameState _gameState = Uninitialized;
+	sf::RenderWindow _mainWindow;
 };

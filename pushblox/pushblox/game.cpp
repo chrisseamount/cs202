@@ -4,8 +4,6 @@
 #include<SFML/System.hpp>
 #include<iostream>
 
-Game::GameState Game::_gameState = Uninitialized;
-sf::RenderWindow Game::_mainWindow;
 
 void Game::start()
 {
