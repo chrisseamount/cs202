@@ -1,15 +1,16 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <iostream>
-#include "C:\Users\arparker5\cs202\pushblox\pushblox\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\include\SFML\Graphics\CircleShape.hpp"
-#include "C:\Users\arparker5\cs202\pushblox\pushblox\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\include\SFML\Graphics\Transformable.hpp"
 #include <stdio.h>
 #include <math.h>
+
+#include "playerlogic.h"
+#include "game.h"
 //#include <Transformable.hpp>
 //#include <SFML/CircleShape.hpp>
 
 
-int main()
+void logic()
 {
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
 	sf::CircleShape triangle(20,3);
@@ -66,7 +67,10 @@ int main()
 						triangle.move(0, 10);
 					}
 					if (event.key.code == sf::Keyboard::Escape)
+					{
 						window.close();
+						return;
+					}
 					/*if (event.key.code == (sf::Keyboard::Left)) {
 						triangle.move(150 * 0.1 * -1, 0);
 					}
@@ -78,11 +82,18 @@ int main()
 					break;
 
 				case sf::Event::Closed:
+				{
 					window.close();
+					return;
+				}
 			}
 
 			if (event.type == sf::Event::Closed)
+			{
 				window.close();
+				return;
+			}
+				
 		}
 
 		window.clear();
@@ -90,5 +101,4 @@ int main()
 		window.display();
 	}
 
-	return 0;
 }

@@ -4,6 +4,8 @@
 #include<SFML/System.hpp>
 #include<iostream>
 
+#include"playerlogic.h"
+
 
 void Game::start()
 {
@@ -12,15 +14,18 @@ void Game::start()
 		return;
 	}
 
-	_mainWindow.create(sf::VideoMode(200, 200), "PushBlox");
-	_gameState = Game::Playing;
-
+	
 	while (!isExiting())
 	{
 		gameLoop();
 	}
 
-	_mainWindow.close();
+	
+}
+
+void Game::exitGame()
+{
+	_gameState = Game::Exiting;
 }
 
 bool Game::isExiting()
@@ -37,23 +42,5 @@ bool Game::isExiting()
 
 void Game::gameLoop()
 {
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-
-	while (_mainWindow.isOpen())
-	{
-		sf::Event event;
-		while (_mainWindow.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-			{
-				_gameState = Game::Exiting;
-				return;
-			}
-		}
-
-		_mainWindow.clear();
-		_mainWindow.draw(shape);
-		_mainWindow.display();
-	}
+	logic();
 }

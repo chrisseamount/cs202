@@ -9,11 +9,13 @@ class Game
 {
 public:
 	void start();
-	
+	void exitGame();
+	bool isExiting();
 private:
 	enum GameState { Uninitialized, Loading, Menu, Playing, Exiting };
-	void gameLoop();
-	bool isExiting();
 	GameState _gameState = Uninitialized;
+	void gameLoop();
+	
+	
 	sf::RenderWindow _mainWindow;
 };
