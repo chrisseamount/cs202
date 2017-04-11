@@ -4,8 +4,12 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "playerlogic.h"
+#include "game.h"
+//#include <Transformable.hpp>
+//#include <SFML/CircleShape.hpp>
 
-int main()
+void logic()
 {
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
 	sf::CircleShape triangle(20,3);
@@ -62,7 +66,10 @@ int main()
 						triangle.move(0, 10);
 					}
 					if (event.key.code == sf::Keyboard::Escape)
+					{
 						window.close();
+						return;
+					}
 					/*if (event.key.code == (sf::Keyboard::Left)) {
 						triangle.move(150 * 0.1 * -1, 0);
 					}
@@ -74,11 +81,18 @@ int main()
 					break;
 
 				case sf::Event::Closed:
+				{
 					window.close();
+					return;
+				}
 			}
 
 			if (event.type == sf::Event::Closed)
+			{
 				window.close();
+				return;
+			}
+				
 		}
 
 		window.clear();
@@ -86,5 +100,4 @@ int main()
 		window.display();
 	}
 
-	return 0;
 }

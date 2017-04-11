@@ -152,12 +152,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Desktop\network.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="playerlogic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
-    <ClInclude Include="networking.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="playerlogic.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
