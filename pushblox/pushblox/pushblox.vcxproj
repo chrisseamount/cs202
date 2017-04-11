@@ -153,7 +153,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Desktop\network.cpp" />
-    <ClCompile Include="playerlogic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />

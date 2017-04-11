@@ -1,12 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <iostream>
-#include "C:\Users\arparker5\cs202\pushblox\pushblox\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\include\SFML\Graphics\CircleShape.hpp"
-#include "C:\Users\arparker5\cs202\pushblox\pushblox\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\include\SFML\Graphics\Transformable.hpp"
 #include <stdio.h>
 #include <math.h>
-//#include <Transformable.hpp>
-//#include <SFML/CircleShape.hpp>
 
 
 int main()
@@ -34,8 +30,8 @@ int main()
 		float _ypos;
 	};*/
 
-	double relmousex;
-	double relmousey;
+	//double relmousex;
+	//double relmousey;
 
 	while (window.isOpen())
 	{
