@@ -152,8 +152,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Desktop\network.cpp" />
     <ClCompile Include="playerlogic.cpp" />
-    <ClCompile Include="network.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
