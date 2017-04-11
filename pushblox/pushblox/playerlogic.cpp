@@ -43,10 +43,6 @@ int main()
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-
-			//relmousex = 
-
-
 			switch (event.type)
 			{
 				case sf::Event::KeyPressed:
