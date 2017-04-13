@@ -1,6 +1,7 @@
 #pragma once
 
 #include "gameState.h"
+#include "player.h"
 
 namespace State
 {
@@ -13,6 +14,6 @@ namespace State
 		void update(double dt);
 		void draw();
 	private:
-
+		Player* player;
 	};
 }

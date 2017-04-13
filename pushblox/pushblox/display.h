@@ -1,14 +1,17 @@
 #pragma once
 
+#include<SFML/Graphics.hpp>
+
 namespace Display
 {
 	void init();
 	void clear();
 	void display();
+	void draw(const sf::Drawable& drawable);
 
 	bool isOpen();
 	void checkWindowEvents();
 
-	const int HEIGHT = 800;
-	const int WIDTH = 600;
+	const int HEIGHT = 600;
+	const int WIDTH = 800;
 }
