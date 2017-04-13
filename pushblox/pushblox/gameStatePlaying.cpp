@@ -8,18 +8,22 @@ namespace State
 
 	}
 
+	//This gets keyboard input
 	void GameStatePlaying::input()
 	{
-		player->input();
+		playerOne.input();
 	}
 
+	//This updates the window for the objects
 	void GameStatePlaying::update(double dt)
 	{
-		player->update();
+		playerOne.loadTexture();
+		playerOne.update();
 	}
 
+	//This draws to the screen
 	void GameStatePlaying::draw()
 	{
-		player->draw();
+		playerOne.draw();
 	}
 }

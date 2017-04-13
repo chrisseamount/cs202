@@ -10,9 +10,9 @@ public:
 	void input();
 	void draw();
 	void loadTexture();
+	sf::Texture playerTexture;
 private:
 	int _movementSpeed = 1;
 	int _counterWalking = 0;
 	int _spritePosition = 32;
-	sf::Texture playerOne;
 };
