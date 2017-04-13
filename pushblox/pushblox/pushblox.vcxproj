@@ -152,17 +152,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="display.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameState.cpp" />
+    <ClCompile Include="gameStatePlaying.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="playerlogic.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="display.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameState.h" />
     <ClInclude Include="gameStatePlaying.h" />
-    <ClInclude Include="gameStateLoading.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="playerlogic.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

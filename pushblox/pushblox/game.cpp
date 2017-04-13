@@ -1,45 +1,48 @@
-#include"game.h"
 #include<SFML/Window.hpp>
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
-#include<iostream>
-
-#include"playerlogic.h"
+#include<memory>
 
 
-void Game::start()
+#include"display.h"
+#include"game.h"
+#include"gameStatePlaying.h"
+
+Game::Game()
 {
-	if (_gameState != Uninitialized)
-	{
-		return;
-	}
+	Display::init();
 
-	
-	
-	gameLoop();
-	
-
-	
-}
-
-void Game::exitGame()
-{
-	_gameState = Game::Exiting;
-}
-
-bool Game::isExiting()
-{
-	if (_gameState == Game::Exiting)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	pushState(std::make_unique<State::GameStatePlaying>(*this));
 }
 
 void Game::gameLoop()
 {
-	logic();
+	while (Display::isOpen())
+	{
+		Display::checkWindowEvents();
+
+		Display::clear();
+
+		_states.top()->input();
+		_states.top()->update(0.0);
+		_states.top()->draw();
+
+		Display::display();
+	}
+}
+
+void Game::pushState(std::unique_ptr<State::GameState > state)
+{
+	_states.push(std::move(state));
+}
+
+void Game::popState()
+{
+	_states.pop();
+}
+
+void Game::changeState(std::unique_ptr<State::GameState > state)
+{
+	popState();
+	pushState(std::move(state));
 }
