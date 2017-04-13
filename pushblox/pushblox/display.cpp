@@ -14,6 +14,7 @@ namespace Display
 	void init()
 	{
 		window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "PushBlox");
+		window->setFramerateLimit(60);
 	}
 
 	void clear()

@@ -42,7 +42,7 @@ void Player::input()
 	}
 
 	_counterWalking++;
-	if (_counterWalking == 2)
+	if (_counterWalking == 3)
 	{
 		_counterWalking = 0;
 	}
