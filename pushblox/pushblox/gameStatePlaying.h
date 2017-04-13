@@ -2,6 +2,8 @@
 
 #include "gameState.h"
 #include "player.h"
+#include <iostream>
+#include <memory>
 
 namespace State
 {
@@ -13,7 +15,9 @@ namespace State
 		void input();
 		void update(double dt);
 		void draw();
+
 	private:
-		Player* player;
+		//std::unique_ptr<Player> playerOne;
+		Player playerOne;
 	};
 }
