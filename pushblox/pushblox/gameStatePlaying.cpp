@@ -1,5 +1,6 @@
 #include "gameStatePlaying.h"
 
+
 namespace State
 {
 	GameStatePlaying::GameStatePlaying(Game& game) : GameState(game)
@@ -9,16 +10,16 @@ namespace State
 
 	void GameStatePlaying::input()
 	{
-
+		player->input();
 	}
 
 	void GameStatePlaying::update(double dt)
 	{
-
+		player->update();
 	}
 
 	void GameStatePlaying::draw()
 	{
-
+		player->draw();
 	}
 }

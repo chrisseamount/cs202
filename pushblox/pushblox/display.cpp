@@ -26,6 +26,11 @@ namespace Display
 		window->display();
 	}
 
+	void draw(const sf::Drawable& drawable)
+	{
+		window->draw(drawable);
+	}
+
 	void checkWindowEvents()
 	{
 		sf::Event e;
