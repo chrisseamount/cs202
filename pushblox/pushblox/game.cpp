@@ -11,7 +11,6 @@
 Game::Game()
 {
 	Display::init();
-
 	pushState(std::make_unique<State::GameStatePlaying>(*this));
 }
 

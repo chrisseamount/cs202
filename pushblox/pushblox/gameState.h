@@ -4,7 +4,6 @@
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
 
-
 class Game;
 
 namespace State

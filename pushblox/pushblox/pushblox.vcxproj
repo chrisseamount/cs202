@@ -157,6 +157,7 @@
     <ClCompile Include="gameState.cpp" />
     <ClCompile Include="gameStatePlaying.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Networking.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
@@ -166,6 +167,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="gameState.h" />
     <ClInclude Include="gameStatePlaying.h" />
+    <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="Networking.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>

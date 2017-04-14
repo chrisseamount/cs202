@@ -13,12 +13,12 @@ Player::Player()
 }
 
 //This sets the position of the sprite relative to the rectangle
-void Player::update()
+void Player::updateSpritePosition()
 {
 	sprite.setPosition(rect.getPosition());
 }
 
-void Player::input()
+void Player::keyboardInput()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
@@ -59,7 +59,7 @@ void Player::loadTexture()
 	sprite.setTexture(playerTexture);
 }
 
-void Player::draw()
+void Player::drawToWindow()
 {
 	Display::draw(sprite);
 }

@@ -6,9 +6,9 @@ class Player : public Entity
 {
 public:
 	Player();
-	void update();
-	void input();
-	void draw();
+	void updateSpritePosition();
+	void keyboardInput();
+	void drawToWindow();
 	void loadTexture();
 	sf::Texture playerTexture;
 private:
