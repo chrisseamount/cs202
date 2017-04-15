@@ -27,7 +27,7 @@ namespace State
 		
 		std::string _msgSend;
 		std::string _msgReceive;
-		static std::string _oldMsg;
+		std::string _oldMsg;
 		std::string _askUser;
 		bool _gameStarted = true;
 
