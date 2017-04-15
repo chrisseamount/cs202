@@ -21,4 +21,6 @@ public:
 
 private:
 	std::stack<std::unique_ptr<State::GameState>> _states;
+	sf::Texture backgroundTex;
+	sf::Sprite background;
 };

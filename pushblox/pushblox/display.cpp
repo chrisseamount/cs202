@@ -11,9 +11,12 @@ namespace Display
 
 	std::unique_ptr<sf::RenderWindow> window;
 
+	std::unique_ptr<sf::View> view;
+
 	void init()
 	{
 		window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "PushBlox");
+		view = std::make_unique<sf::View>(sf::FloatRect(0, 0, 1, 1));
 	}
 
 	void clear()
@@ -28,6 +31,7 @@ namespace Display
 
 	void draw(const sf::Drawable& drawable)
 	{
+		window->setView(*view);
 		window->draw(drawable);
 	}
 
@@ -49,6 +53,15 @@ namespace Display
 		return window->isOpen();
 	}
 
+	void setView()
+	{
+		view->setSize(800, 600);
+		view->setCenter(432, 268);
+	}
 
+	void changeView(float w, float h)
+	{
+		view->move(w, h);
+	}
 
 }

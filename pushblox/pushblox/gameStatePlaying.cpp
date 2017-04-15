@@ -10,16 +10,16 @@ namespace State
 
 	void GameStatePlaying::input()
 	{
-		player->input();
+		player.input();
 	}
 
 	void GameStatePlaying::update(double dt)
 	{
-		player->update();
+		player.update();
 	}
 
 	void GameStatePlaying::draw()
 	{
-		player->draw();
+		player.draw();
 	}
 }

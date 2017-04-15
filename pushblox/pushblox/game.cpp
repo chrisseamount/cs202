@@ -17,6 +17,12 @@ Game::Game()
 
 void Game::gameLoop()
 {
+	if (!backgroundTex.loadFromFile("magecity.png"))
+	{
+		return;
+	}
+	background.setTexture(backgroundTex);
+	
 	while (Display::isOpen())
 	{
 		Display::checkWindowEvents();
@@ -25,6 +31,7 @@ void Game::gameLoop()
 
 		_states.top()->input();
 		_states.top()->update(0.0);
+		Display::draw(background);
 		_states.top()->draw();
 
 		Display::display();

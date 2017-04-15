@@ -14,6 +14,6 @@ namespace State
 		void update(double dt);
 		void draw();
 	private:
-		Player* player;
+		Player player;
 	};
 }
