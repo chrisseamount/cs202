@@ -9,6 +9,11 @@
 
 #include"gameState.h"
 
+/*
+This is the logic state class. It uses a stack to store which state the game is in. 
+It uses the functions to change or pause the game state that it is currently in.
+*/
+
 class Game
 {
 public:

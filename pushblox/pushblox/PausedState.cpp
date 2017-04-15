@@ -1,7 +1,6 @@
 #include "MainMenuState.h"
 #include "game.h"
 #include "PausedState.h"
-#include "gameStatePlaying.h"
 #include "display.h"
 
 #include <memory>

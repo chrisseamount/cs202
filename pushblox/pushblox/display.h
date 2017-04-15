@@ -2,6 +2,11 @@
 
 #include<SFML/Graphics.hpp>
 
+/*
+Display is just a display throughout the game. It uses one window so that the game can switch between states. 
+Every object is drawn to the screen everytime something has been changed.
+*/
+
 namespace Display
 {
 	void init();

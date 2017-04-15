@@ -6,13 +6,11 @@
 
 #include"display.h"
 #include"game.h"
-#include"gameStatePlaying.h"
 #include"MainMenuState.h"
 
 Game::Game()
 {
 	Display::init();
-	//pushState(std::make_unique<State::GameStatePlaying>(*this));
 	pushState(std::make_unique<State::MainMenuState>(*this));
 }
 

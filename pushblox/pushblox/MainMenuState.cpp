@@ -1,10 +1,15 @@
 #include "MainMenuState.h"
 #include "game.h"
-#include "gameStatePlaying.h"
+#include "gameStateClient.h"
 #include "display.h"
+#include "GameStateClient.h"
+#include "GameStateServer.h"
 
 #include <memory>
-
+#include <iostream>
+/*
+Main Menu state is the main state of the game. It has a hiearchy of MainMenu to 
+*/
 namespace State
 {
 	MainMenuState::MainMenuState(Game& game) : GameState(game)
@@ -17,9 +22,14 @@ namespace State
 	//This gets keyboard input
 	void MainMenuState::input()
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
 		{
-			_game->changeState(std::make_unique<State::GameStatePlaying>(*_game));
+			_game->changeState(std::make_unique<State::GameStateServer>(*_game));
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+		{
+			std::cout << "Went to Client window" << std::endl;
+			_game->changeState(std::make_unique<State::GameStateClient>(*_game));
 		}
 	}
 
