@@ -28,7 +28,7 @@ namespace State
 		std::string _msgSend;
 		std::string _msgReceive;
 		std::string _askUser;
-		static std::string _oldMsg;
+		std::string _oldMsg;
 		bool _gameStopped = true;
 
 		const unsigned short PORT = 5042;
