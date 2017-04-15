@@ -49,7 +49,4 @@ namespace Display
 	{
 		return window->isOpen();
 	}
-
-
-
 }
