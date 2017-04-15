@@ -6,6 +6,8 @@
 
 #include <memory>
 
+//Functions
+
 namespace State
 {
 	PausedState::PausedState(Game& game) : GameState(game)
