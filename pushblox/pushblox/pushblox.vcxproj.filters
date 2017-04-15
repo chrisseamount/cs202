@@ -48,6 +48,9 @@
     <ClCompile Include="ClientMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -83,6 +86,9 @@
     <ClInclude Include="ServerMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sounds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Finally.png">
@@ -93,5 +99,51 @@
     <Font Include="E:\Downloads\nimavisual_trench\trench100free.ttf">
       <Filter>Resource Files</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sounds\AdultLink_Fall.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\Bonk_Hit.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\HeavyEat_PPU.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\HeavyIncoming_PPU.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\Mario_Fall.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\Oorah_PPU.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\Sound1_FPU.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\Sound2_FPU.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\Sound3_FPU.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\Wilhelm Scream_Fall.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Sounds\YoungLink_Fall.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\HaloTheme_IntroSong.ogg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Sounds\HyruleTemple_FightSong.ogg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Sounds\PokmonStadium_FightSong.ogg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

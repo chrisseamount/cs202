@@ -22,13 +22,13 @@
     <ProjectGuid>{9AEE8F48-BD0B-4164-9131-14CBB652E995}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>pushblox</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -163,6 +163,7 @@
     <ClCompile Include="PausedState.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="ServerMenu.cpp" />
+    <ClCompile Include="Sounds.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientMenu.h" />
@@ -176,12 +177,31 @@
     <ClInclude Include="PausedState.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="ServerMenu.h" />
+    <ClInclude Include="Sounds.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Finally.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="E:\Downloads\nimavisual_trench\trench100free.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sounds\AdultLink_Fall.wav" />
+    <Media Include="Sounds\Bonk_Hit.wav" />
+    <Media Include="Sounds\HeavyEat_PPU.wav" />
+    <Media Include="Sounds\HeavyIncoming_PPU.wav" />
+    <Media Include="Sounds\Mario_Fall.wav" />
+    <Media Include="Sounds\Oorah_PPU.wav" />
+    <Media Include="Sounds\Sound1_FPU.wav" />
+    <Media Include="Sounds\Sound2_FPU.wav" />
+    <Media Include="Sounds\Sound3_FPU.wav" />
+    <Media Include="Sounds\Wilhelm Scream_Fall.wav" />
+    <Media Include="Sounds\YoungLink_Fall.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\HaloTheme_IntroSong.ogg" />
+    <None Include="Sounds\HyruleTemple_FightSong.ogg" />
+    <None Include="Sounds\PokmonStadium_FightSong.ogg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

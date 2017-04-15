@@ -4,6 +4,7 @@
 #include "display.h"
 #include "GameStateClient.h"
 #include "GameStateServer.h"
+#include "Sounds.h"
 
 #include <memory>
 #include <iostream>
@@ -43,5 +44,9 @@ namespace State
 	void MainMenuState::draw()
 	{
 		Display::draw(rectangle);
+		music.menuMusic();
 	}
+	/*void MainMenuState::MenuMusic() {
+		Sounds::MenuMusic();
+	}*/
 }

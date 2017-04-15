@@ -4,6 +4,7 @@
 #include "entity.h"
 #include <iostream>
 #include <memory>
+#include "Sounds.h"
 
 namespace State
 {
@@ -15,8 +16,8 @@ namespace State
 		void input();
 		void update(double dt);
 		void draw();
-
 	private:
 		sf::RectangleShape rectangle;
+		Sounds::SoundClass music;
 	};
 }
