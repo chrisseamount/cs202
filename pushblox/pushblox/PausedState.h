@@ -1,22 +1,22 @@
 #pragma once
 
 #include "gameState.h"
-#include "player.h"
+#include "entity.h"
 #include <iostream>
 #include <memory>
 
 namespace State
 {
-	class GameStatePlaying : public GameState
+	class PausedState : public GameState
 	{
 	public:
-		GameStatePlaying(Game& game);
-		
+		PausedState(Game& game);
+
 		void input();
 		void update(double dt);
 		void draw();
 
 	private:
-		Player playerOne;
+		sf::RectangleShape rectangle;
 	};
 }

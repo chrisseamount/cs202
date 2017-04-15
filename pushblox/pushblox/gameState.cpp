@@ -3,7 +3,5 @@
 namespace State
 {
 	GameState::GameState(Game& game) : _game (&game)
-	{
-
-	}
+	{}
 }
