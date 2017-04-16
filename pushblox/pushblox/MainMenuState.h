@@ -15,8 +15,17 @@ namespace State
 		void input();
 		void update(double dt);
 		void draw();
-
+		void loadFont();
+		void createMainMenuTexts();
 	private:
 		sf::RectangleShape rectangle;
+
+		sf::Font font;
+		//creating text objects
+		sf::Text localGameText;
+		sf::Text networkGameText;
+		sf::Text settingsText;
+		sf::Text aboutText;
+
 	};
 }

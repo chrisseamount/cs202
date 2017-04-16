@@ -30,9 +30,6 @@
     <ClCompile Include="player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PausedState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -46,6 +43,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ClientMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,9 +65,6 @@
     <ClInclude Include="player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PausedState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -83,6 +80,9 @@
     <ClInclude Include="ServerMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Finally.png">
@@ -90,7 +90,10 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="E:\Downloads\nimavisual_trench\trench100free.ttf">
+    <Font Include="..\..\..\..\..\..\Downloads\budidaya\Budidaya.otf">
+      <Filter>Resource Files</Filter>
+    </Font>
+    <Font Include="..\..\..\..\..\..\Downloads\billy-argel_sweet-sensations-personal-use\fdsa.ttf">
       <Filter>Resource Files</Filter>
     </Font>
   </ItemGroup>
