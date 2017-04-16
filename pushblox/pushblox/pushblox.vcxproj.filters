@@ -89,9 +89,4 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
-  <ItemGroup>
-    <Font Include="E:\Downloads\nimavisual_trench\trench100free.ttf">
-      <Filter>Resource Files</Filter>
-    </Font>
-  </ItemGroup>
 </Project>

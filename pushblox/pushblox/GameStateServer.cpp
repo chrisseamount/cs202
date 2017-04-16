@@ -2,6 +2,7 @@
 #include "PausedState.h"
 #include "game.h"
 #include <memory>
+#include "display.h"
 
 namespace State
 {
@@ -17,17 +18,15 @@ namespace State
 	{
 		playerOne.keyboardInput();
 
-		std::cout << "Enter a message to send" << std::endl;
-		std::cin >> _askUser;
-
 		_globalMutex.lock();
-		_msgSend = _askUser;
+		_msgSend = playerOne.rect.getPosition.x;
 		_globalMutex.unlock();
 	}
 
 	//This updates the window for the objects
 	void GameStateServer::update(double dt)
 	{
+		syncStatus();
 		server();
 		playerOne.updateSpritePosition();
 	}
@@ -36,6 +35,7 @@ namespace State
 	void GameStateServer::draw()
 	{
 		playerOne.drawToWindow();
+		Display::draw(_rect);
 	}
 
 	//This is a server function. It lets clients connect to the game, when before the game starts
@@ -45,13 +45,12 @@ namespace State
 		{
 			_listener.listen(PORT);
 			_listener.accept(_socket);
-			std::cout << "New client connected " << _socket.getRemoteAddress() << std::endl;
 		}
 	}
 
 	void GameStateServer::syncStatus()
 	{
-		std::cout << "IT WORKED?" << std::endl;
+		
 		//This locks a message into packetsend
 		_globalMutex.lock();
 		_packetSend << _msgSend;
@@ -67,11 +66,7 @@ namespace State
 		{
 			if (_oldMsg != _msgReceive)
 			{
-				if (!_msgReceive.empty())
-				{
-					std::cout << _msgReceive << std::endl;
-					_oldMsg = _msgReceive;
-				}
+				playerTwo.rect.setPosition(_msgReceive);
 			}
 		}
 	}

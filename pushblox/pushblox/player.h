@@ -11,6 +11,7 @@ public:
 	void drawToWindow();
 	void loadTexture();
 	sf::Texture playerTexture;
+
 private:
 	int _movementSpeed = 5;
 	int _counterWalking = 0;

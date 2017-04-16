@@ -6,6 +6,7 @@
 #include <SFML/Network.hpp>
 #include <memory>
 #include <string>
+#include <sstream>
 
 namespace State
 {
@@ -23,12 +24,14 @@ namespace State
 		void syncStatus();
 
 	private:
+
 		Player playerOne;
+		Player playerTwo;
+		sf::RectangleShape _rect;
 		
-		std::string _msgSend;
-		std::string _msgReceive;
-		std::string _oldMsg;
-		std::string _askUser;
+		int _msgSend;
+		int _msgReceive;
+		int _oldMsg;
 		bool _gameStarted = true;
 
 		const unsigned short PORT = 5042;
