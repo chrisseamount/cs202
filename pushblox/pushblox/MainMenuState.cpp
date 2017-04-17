@@ -22,13 +22,12 @@ namespace State
 	//This gets keyboard input
 	void MainMenuState::input()
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
 		{
 			_game->changeState(std::make_unique<State::GameStateServer>(*_game));
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
 		{
-			std::cout << "Went to Client window" << std::endl;
 			_game->changeState(std::make_unique<State::GameStateClient>(*_game));
 		}
 	}

@@ -8,9 +8,12 @@ public:
 	Player();
 	void updateSpritePosition();
 	void keyboardInput();
+	void keyboardInput2();
 	void drawToWindow();
 	void loadTexture();
 	sf::Texture playerTexture;
+
+	int _direction = 0;
 
 private:
 	int _movementSpeed = 5;
