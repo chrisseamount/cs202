@@ -180,6 +180,9 @@
   <ItemGroup>
     <Image Include="Finally.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="Trench.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -5,8 +5,8 @@
 Player::Player()
 {
 	rect.setSize(sf::Vector2f(60, 65));
-	rect.setPosition(400, 200);
-	rect.setFillColor(sf::Color::Black);
+	//rect.setPosition(400, 200);			//We must define the position in the states
+	rect.setFillColor(sf::Color::White);
 	
 	sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 	sprite.scale(2.0f, 2.0f);
@@ -99,4 +99,9 @@ void Player::loadTexture()
 void Player::drawToWindow()
 {
 	Display::draw(sprite);
+}
+
+int Player::getDirection() const
+{
+	return _direction;
 }

@@ -27,8 +27,11 @@ namespace State
 		virtual void update(double dt) = 0;
 		virtual void draw() = 0;
 
+		void loadFont();
+
 	protected:
 		Game* _game;
-		sf::Text text;
+		sf::Text _text;
+		sf::Font _font;
 	};
 }

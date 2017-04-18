@@ -13,10 +13,12 @@ public:
 	void loadTexture();
 	sf::Texture playerTexture;
 
-	int _direction = 0;
+	int getDirection() const;
+
+	int _direction = 1;
+	int _counterWalking = 0;
 
 private:
 	int _movementSpeed = 5;
-	int _counterWalking = 0;
 	int _spritePosition = 32;
 };
