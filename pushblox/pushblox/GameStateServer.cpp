@@ -8,14 +8,17 @@ namespace State
 {
 	GameStateServer::GameStateServer(Game& game) : GameState(game)
 	{
+		//This loads the texture and sets the position of the players onto the screen
 		_playerOne.loadTexture();
 		_playerTwo.loadTexture();
 		_playerOne.rect.setPosition(400, 200);
 		_playerTwo.rect.setPosition(400, 100);
 
+		//This is for the server. It listens for incoming connections
 		_threadListener = std::make_unique<sf::Thread>(&GameStateServer::server, this);
 		_threadListener->launch();
 
+		//This is if any client connected. It is important
 		_rect.setSize(sf::Vector2f(10, 10));
 		_rect.setFillColor(sf::Color::Red);
 	}
