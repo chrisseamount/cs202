@@ -48,7 +48,8 @@ namespace State
 
 		//Used for Networking
 		const unsigned short PORT = 5042;
-		const std::string IPADDRESS = "172.22.25.61";
+		//const std::string IPADDRESS = "172.22.25.61";
+		const std::string IPADDRESS = sf::IpAddress::getLocalAddress();  // My address on the local network
 
 		//Networking objects. Important.
 		sf::TcpSocket _socket;		//Used to send packets of data
@@ -57,5 +58,6 @@ namespace State
 		std::unique_ptr<sf::Thread> _threadListener; //Used to create a thread that will send and check updates
 		sf::Packet _packetSend;		//This sends data to one another
 		sf::Packet _packetReceive;  //This recieves any incoming packets
+		//sf::IpAddress IPADDRESS = sf::IpAddress::getLocalAddress();  // My address on the local network
 	};
 }
