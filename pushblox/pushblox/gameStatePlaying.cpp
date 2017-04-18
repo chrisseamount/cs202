@@ -27,17 +27,19 @@ namespace State
 	{
 		playerOne.updateSpritePosition();
 		playerTwo.updateSpritePosition();
-		if (playerOne.rect.getGlobalBounds().intersects(playerTwo.rect.getGlobalBounds()))
+
+		//Checks Player collision
+		/*if (playerOne.rect.getGlobalBounds().intersects(playerTwo.rect.getGlobalBounds()))
 		{
 			switch (playerOne._direction)
 			{
-			case 1:	playerOne.rect.move(0, playerOne._movementSpeed);
+			case 1:	playerOne.rect.move(0, playerOne._movementSpeed); up
 				break;
-			case 2: playerOne.rect.move(0, -playerOne._movementSpeed);
+			case 2: playerOne.rect.move(0, -playerOne._movementSpeed); down 
 				break;
-			case 3: playerOne.rect.move(playerOne._movementSpeed, 0);
+			case 3: playerOne.rect.move(playerOne._movementSpeed, 0); left
 				break;
-			case 4: playerOne.rect.move(-playerOne._movementSpeed,0);
+			case 4: playerOne.rect.move(-playerOne._movementSpeed,0); right
 				break;
 			}
 			playerOne._direction = 0;
@@ -56,7 +58,35 @@ namespace State
 				break;
 			}
 			playerTwo._direction = 0;
+		}*/
+		if (playerOne.rect.getGlobalBounds().intersects(playerTwo.rect.getGlobalBounds()))
+		{
+			if(playerOne._xdirection == 1)//Moving Right
+			{
+				playerOne.rect.move(-playerOne._movementSpeed, 0);
+			}
+			if (playerOne._xdirection == -1)//Moving Left
+			{
+				playerOne.rect.move(playerOne._movementSpeed, 0);
+			}
+			
+			playerOne._xdirection = 0;
+			playerOne._ydirection = 0;
 		}
+		/*if (playerTwo.rect.getGlobalBounds().intersects(playerOne.rect.getGlobalBounds()))
+		{
+			if (playerTwo._xdirection == 1)//Moving Right
+			{
+				playerTwo.rect.move(-playerTwo._movementSpeed, 0);
+			}
+			if (playerTwo._xdirection == -1)//Moving Left
+			{
+				playerTwo.rect.move(playerTwo._movementSpeed, 0);
+			}
+			
+			playerTwo._xdirection = 0;
+			playerTwo._ydirection = 0;
+		}*/
 
 	}
 	//This draws to the screen

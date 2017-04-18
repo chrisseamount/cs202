@@ -14,7 +14,10 @@ public:
 	void loadTexture();
 	sf::Texture playerTexture;
 	int _movementSpeed = 5;
-	int _direction = 0; //1 - UP, 2 - Down, 3 - Left, 4 - Right
+	int _xdirection = 0; //0 - Neutral, 1 - Left, (-1) - Right
+	int _ydirection = 0; //0 - Neutral, 1 - Up, (-1) - Down
+
+	//1-up, 2-down, 3-left, 4-right
 private:
 	int _counterWalking = 0;
 	int _spritePosition = 32;
