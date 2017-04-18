@@ -26,6 +26,10 @@ void Player::keyboardInput()
 		rect.move(0, -_movementSpeed);
 		sprite.setTextureRect(sf::IntRect((_counterWalking * 32)+(32*3), 32 * 3, 32, 32));
 		_direction = 1;
+		/*if (sf::Keyboard::D || sf::Keyboard::A)
+		{
+			
+		}*/
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
