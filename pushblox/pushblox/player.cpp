@@ -1,6 +1,7 @@
 #include "player.h"
 #include "display.h"
 
+
 Player::Player()
 {
 	loadTexture();
@@ -22,30 +23,31 @@ void Player::update()
 	sprite.setPosition(rect.getPosition());
 }
 
-void Player::input()
+void Player::input(sf::Time& dt)
 {
+	_movementSpeed = 500;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
-		rect.move(0, -_movementSpeed);
-		Display::changeView(0, -_movementSpeed);
+		rect.move(0, -_movementSpeed * dt.asSeconds());
+		Display::changeView(0, -_movementSpeed * dt.asSeconds());
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
-		rect.move(0, _movementSpeed);
-		Display::changeView(0, _movementSpeed);
+		rect.move(0, _movementSpeed * dt.asSeconds());
+		Display::changeView(0, _movementSpeed * dt.asSeconds());
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		rect.move(-_movementSpeed, 0);
-		Display::changeView(-_movementSpeed, 0);
+		rect.move(-_movementSpeed * dt.asSeconds(), 0);
+		Display::changeView(-_movementSpeed * dt.asSeconds(), 0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		rect.move(_movementSpeed, 0);
-		Display::changeView(_movementSpeed, 0);
+		rect.move(_movementSpeed * dt.asSeconds(), 0);
+		Display::changeView(_movementSpeed * dt.asSeconds(), 0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
 	}
 

@@ -17,6 +17,9 @@ Game::Game()
 
 void Game::gameLoop()
 {
+	sf::Clock clock;
+	sf::Time dt;
+	
 	if (!backgroundTex.loadFromFile("magecity.png"))
 	{
 		return;
@@ -25,16 +28,23 @@ void Game::gameLoop()
 	
 	while (Display::isOpen())
 	{
+		
+		
 		Display::checkWindowEvents();
 
 		Display::clear();
 
-		_states.top()->input();
+		_states.top()->input(dt);
+
+		
+
 		_states.top()->update(0.0);
 		Display::draw(background);
 		_states.top()->draw();
 
 		Display::display();
+
+		dt = clock.restart();
 	}
 }
 

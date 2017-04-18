@@ -8,9 +8,9 @@ namespace State
 
 	}
 
-	void GameStatePlaying::input()
+	void GameStatePlaying::input(sf::Time& dt)
 	{
-		player.input();
+		player.input(dt);
 	}
 
 	void GameStatePlaying::update(double dt)

@@ -8,7 +8,7 @@ public:
 	Player();
 	~Player();
 	void update();
-	void input();
+	void input(sf::Time& dt);
 	void draw();
 	void loadTexture();
 private:
