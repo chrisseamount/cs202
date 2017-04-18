@@ -72,19 +72,19 @@ namespace State
 		*/
 		if (_packetReceive >> _playerOneXR >> _playerOneYR >> _playerDirectionR)
 		{
-			if (_playerDirectionR = 1)
+			if (_playerDirectionR == 1)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
 			}
-			if (_playerDirectionR = 2)
+			else if (_playerDirectionR == 2)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
 			}
-			if (_playerDirectionR = 3)
+			else if (_playerDirectionR == 3)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
 			}
-			if (_playerDirectionR = 4)
+			else if (_playerDirectionR == 4)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
 			}
@@ -96,5 +96,6 @@ namespace State
 			_playerTwo.rect.setPosition(_playerOneXR, _playerOneYR); //This may cause an issue. I'll look for a better way to set the position without screwing up
 		}
 		_packetSend.clear();
+		_packetReceive.clear();
 	}
 }

@@ -29,9 +29,10 @@ namespace State
 		Player _playerOne;
 		Player _playerTwo;
 		sf::RectangleShape _rect;
+		sf::Text _text2;
 		
 		//Used for objects and functions
-		int _counterWalking;
+		int _counterWalking =0;
 		bool _gameStarted = false;
 
 		//Used to send packets to another person
@@ -43,6 +44,7 @@ namespace State
 		unsigned short int _playerOneXR;
 		unsigned short int _playerOneYR;
 		unsigned short int _playerDirectionR;
+		int _playerOldDirection;
 
 		//Used for Networking
 		const unsigned short PORT = 5042;
