@@ -43,6 +43,7 @@ namespace State
 		unsigned short int _playerOneXR;
 		unsigned short int _playerOneYR;
 		unsigned short int _playerDirectionR;
+		bool _playerIsRunning;
 
 		//Used for networking
 		const unsigned short PORT = 5042;

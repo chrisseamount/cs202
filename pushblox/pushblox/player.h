@@ -17,6 +17,7 @@ public:
 
 	int _direction = 1;
 	int _counterWalking = 0;
+	bool _isRunning = false;
 
 private:
 	int _movementSpeed = 5;

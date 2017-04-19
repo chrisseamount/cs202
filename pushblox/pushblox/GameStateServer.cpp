@@ -105,7 +105,7 @@ namespace State
 
 		//This locks a message into a packet
 		_globalMutex.lock();
-		_packetSend << _playerOneX << _playerOneY << _playerDirection;
+		_packetSend << _playerOneX << _playerOneY << _playerDirection << _playerOne._isRunning;
 		_globalMutex.unlock();
 
 		//This sends all the packets that are put 
