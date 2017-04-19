@@ -71,21 +71,21 @@ namespace State
 		/*
 		Not working at the moment. The player is currently running on a side
 		*/
-		if (_packetReceive >> _playerOneXR >> _playerOneYR >> _playerDirectionR >> _playerIsRunning)
+		if (_packetReceive >> _playerOneXR >> _playerOneYR >> _playerDirectionR >> _playerIsRunningR)
 		{
-			if (_playerDirectionR == 1 && _playerIsRunning)
+			if (_playerDirectionR == 1 && _playerIsRunningR)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
 			}
-			else if (_playerDirectionR == 2 && _playerIsRunning)
+			else if (_playerDirectionR == 2 && _playerIsRunningR)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
 			}
-			else if (_playerDirectionR == 3 && _playerIsRunning)
+			else if (_playerDirectionR == 3 && _playerIsRunningR)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
 			}
-			else if (_playerDirectionR == 4 && _playerIsRunning)
+			else if (_playerDirectionR == 4 && _playerIsRunningR)
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
 			}
