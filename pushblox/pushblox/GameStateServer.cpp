@@ -99,8 +99,8 @@ namespace State
 	{
 		//This gets the local player's position and sends it to the other players
 		_globalMutex.lock();
-		_playerOneX = (sf::Uint32)_playerOne.rect.getPosition().x;
-		_playerOneY = (sf::Uint32)_playerOne.rect.getPosition().y;
+		_playerOneX = _playerOne.rect.getPosition().x;
+		_playerOneY = _playerOne.rect.getPosition().y;
 		_globalMutex.unlock();
 
 		//This locks a message into a packet

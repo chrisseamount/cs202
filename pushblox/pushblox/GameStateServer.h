@@ -36,20 +36,20 @@ namespace State
 		bool _gameStarted = false;
 
 		//Used to send packets to another person
-		sf::Uint32 _playerOneX;
-		sf::Uint32 _playerOneY;
-		sf::Uint8 _playerDirection;
-		sf::Uint8 _playerOneIsRunning;
+		unsigned short int _playerOneX;
+		unsigned short int _playerOneY;
+		unsigned short int _playerDirection;
+		unsigned short int _playerOneIsRunning;
 
 		//Used to turn packets into integers
-		sf::Uint32 _playerOneXR;
-		sf::Uint32 _playerOneYR;
-		sf::Uint8 _playerDirectionR;
-		sf::Uint8 _playerOneIsRunningR;
+		unsigned short int _playerOneXR;
+		unsigned short int _playerOneYR;
+		unsigned short int _playerDirectionR;
+		unsigned short int _playerOneIsRunningR;
 
 		//Used for Networking
-		const unsigned short PORT = 3306;
-		const std::string IPADDRESS = "0.0.0.0";
+		const unsigned short PORT = 5042;
+		const std::string IPADDRESS = "172.22.25.147";
 		//const std::string IPADDRESS = sf::IpAddress::getLocalAddress();  // My address on the local network
 
 		//Networking objects. Important.
