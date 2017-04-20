@@ -101,12 +101,11 @@ namespace State
 		_globalMutex.lock();
 		_playerOneX = (sf::Uint32)_playerOne.rect.getPosition().x;
 		_playerOneY = (sf::Uint32)_playerOne.rect.getPosition().y;
-		_playerDirection = _playerOne.getDirection();
 		_globalMutex.unlock();
 
 		//This locks a message into a packet
 		_globalMutex.lock();
-		_packetSend << _playerOneX << _playerOneY << _playerDirection << _playerOne._isRunning;
+		_packetSend << _playerOneX << _playerOneY << _playerDirection;
 		_globalMutex.unlock();
 
 		//This sends all the packets that are put 
