@@ -14,9 +14,11 @@ public:
 	sf::Texture playerTexture;
 
 	int getDirection() const;
+	int getIsRunning() const;
 
 	int _direction = 1;
 	int _counterWalking = 0;
+	int _isRunning = 0;
 
 private:
 	int _movementSpeed = 5;

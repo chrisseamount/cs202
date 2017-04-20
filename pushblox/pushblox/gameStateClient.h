@@ -33,20 +33,23 @@ namespace State
 		int _counterWalking;
 		char _position;
 		bool _gameStopped = true;
+		
 
 		//Used to send packets to another person
-		unsigned short int _playerOneX;
-		unsigned short int _playerOneY;
-		unsigned short int _playerDirection;
+		sf::Uint32 _playerOneX;
+		sf::Uint32 _playerOneY;
+		sf::Uint8 _playerDirection;
+		sf::Uint8 _playerOneIsRunning;
 
 		//Used to turn packets into integers
-		unsigned short int _playerOneXR;
-		unsigned short int _playerOneYR;
-		unsigned short int _playerDirectionR;
+		sf::Uint32 _playerOneXR;
+		sf::Uint32 _playerOneYR;
+		sf::Uint8 _playerDirectionR;
+		sf::Uint8 _playerOneIsRunningR;
 
 		//Used for networking
-		const unsigned short PORT = 5042;
-		const std::string IPADDRESS = "172.22.25.61";
+		const unsigned short PORT = 3306;
+		const std::string IPADDRESS = "127.0.0.1";
 
 		//Networking Objects. Important.
 		sf::TcpSocket _socket;		//Used to send packets of data

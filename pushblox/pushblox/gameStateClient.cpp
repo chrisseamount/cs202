@@ -18,6 +18,13 @@ namespace State
 
 		_rect.setSize(sf::Vector2f(10, 10));
 		_rect.setFillColor(sf::Color::Blue);
+
+		//This is the main menu logo
+		loadFont();
+		_text.setFont(_font);
+		_text.setCharacterSize(60);
+		_text.setFillColor(sf::Color::Blue);
+		_text.setPosition(Display::HEIGHT / 2, 10);
 	}
 	//This gets keyboard input
 	void GameStateClient::input()
@@ -38,22 +45,28 @@ namespace State
 		_playerOne.drawToWindow();
 		_playerTwo.drawToWindow();
 		Display::draw(_rect);
+		Display::draw(_text);
 		syncStatus(); //Networking function to send packets of data
+		_playerOne._isRunning = 0;
 	}
 
 	//This is a server function. It lets clients connect to the game, when before the game starts
 	void GameStateClient::client()
 	{
-		_socket.connect(IPADDRESS, PORT);
+		if (_socket.connect(IPADDRESS, PORT))
+		{
+			_text.setString("Connected");
+		}
 	}
 
 	void GameStateClient::syncStatus(void)
 	{
 		//This gets the local player's position and sends it to the other players
 		_globalMutex.lock();
-		_playerOneX = (int)_playerOne.rect.getPosition().x;
-		_playerOneY = (int)_playerOne.rect.getPosition().y;
-		_playerDirection = (int)_playerOne.getDirection();
+		_playerOneX = _playerOne.rect.getPosition().x;
+		_playerOneY = _playerOne.rect.getPosition().y;
+		_playerDirection = _playerOne.getDirection();
+		//_playerOneIsRunning = _playerOne.getIsRunning();
 		_globalMutex.unlock();
 
 		//This locks a message into a packet
@@ -76,7 +89,7 @@ namespace State
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
 			}
-			else if (_playerDirectionR == 2)
+			else if (_playerDirectionR == 2 )
 			{
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
 			}

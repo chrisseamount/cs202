@@ -75,6 +75,7 @@ namespace State
 		Display::draw(_rect);
 		Display::draw(_text);
 		Display::draw(_text2);
+		_playerOne._isRunning = 0;
 	}
 
 	//This is a server function. It lets clients connect to the game, when before the game starts
@@ -98,8 +99,8 @@ namespace State
 	{
 		//This gets the local player's position and sends it to the other players
 		_globalMutex.lock();
-		_playerOneX = (int)_playerOne.rect.getPosition().x;
-		_playerOneY = (int)_playerOne.rect.getPosition().y;
+		_playerOneX = (sf::Uint32)_playerOne.rect.getPosition().x;
+		_playerOneY = (sf::Uint32)_playerOne.rect.getPosition().y;
 		_playerDirection = _playerOne.getDirection();
 		_globalMutex.unlock();
 
