@@ -152,17 +152,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="background.cpp" />
+    <ClCompile Include="display.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameState.cpp" />
+    <ClCompile Include="gameStatePlaying.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="playerlogic.cpp" />
+    <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="background.h" />
+    <ClInclude Include="display.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameState.h" />
     <ClInclude Include="gameStatePlaying.h" />
-    <ClInclude Include="gameStateLoading.h" />
     <ClInclude Include="player.h" />
-    <ClInclude Include="playerlogic.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Finally.png" />
+    <Image Include="magecity.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

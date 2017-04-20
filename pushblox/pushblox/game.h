@@ -3,17 +3,24 @@
 #include<SFML/Window.hpp>
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
-#include<iostream>
+
+#include<memory>
+#include<stack>
+
+#include"gameState.h"
 
 class Game
 {
 public:
-	void start();
-	void exitGame();
-	bool isExiting();
-private:
-	enum GameState { Uninitialized, Loading, Menu, Playing, Exiting };
-	GameState _gameState = Uninitialized;
+	Game();
 	void gameLoop();
-	sf::RenderWindow _mainWindow;
+
+	void pushState(std::unique_ptr<State::GameState > state);
+	void popState();
+	void changeState(std::unique_ptr<State::GameState > state);
+
+private:
+	std::stack<std::unique_ptr<State::GameState>> _states;
+	sf::Texture backgroundTex;
+	sf::Sprite background;
 };

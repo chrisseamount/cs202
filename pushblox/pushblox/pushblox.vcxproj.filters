@@ -15,34 +15,57 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="playerlogic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameStatePlaying.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="playerlogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gameStateLoading.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="gameStatePlaying.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="background.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Finally.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="magecity.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
