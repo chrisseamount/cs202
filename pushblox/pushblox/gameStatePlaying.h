@@ -2,6 +2,7 @@
 
 #include "gameState.h"
 #include "player.h"
+#include "background.h"
 
 namespace State
 {
@@ -15,5 +16,6 @@ namespace State
 		void draw();
 	private:
 		Player player;
+		Background background;
 	};
 }

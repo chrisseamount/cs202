@@ -25,7 +25,7 @@ void Player::update()
 
 void Player::input(sf::Time& dt)
 {
-	_movementSpeed = 500;
+	_movementSpeed = 1500;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
 		rect.move(0, -_movementSpeed * dt.asSeconds());

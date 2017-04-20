@@ -7,10 +7,7 @@ class Background : public Entity
 public:
 	Background();
 	~Background();
-	void update();
-	void input(sf::Time& dt);
 	void draw();
-	void loadTexture();
 private:
 	sf::CircleShape outerCircle;
 	sf::CircleShape middleCircle;

@@ -20,6 +20,7 @@ namespace State
 
 	void GameStatePlaying::draw()
 	{
+		background.draw();
 		player.draw();
 	}
 }

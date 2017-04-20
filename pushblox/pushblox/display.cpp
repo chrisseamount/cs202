@@ -15,7 +15,9 @@ namespace Display
 
 	void init()
 	{
-		window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "PushBlox");
+		sf::ContextSettings settings;
+		settings.antialiasingLevel = 16;
+		window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "PushBlox",sf::Style::Default, settings);
 		view = std::make_unique<sf::View>(sf::FloatRect(0, 0, 1, 1));
 	}
 
@@ -55,7 +57,7 @@ namespace Display
 
 	void setView()
 	{
-		view->setSize(800, 600);
+		view->setSize(3200, 2400);
 		view->setCenter(432, 268);
 	}
 
