@@ -21,6 +21,7 @@ void Player::updateSpritePosition()
 
 void Player::keyboardInput()
 {
+	_playerstate = 0;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
 		rect.move(0, -_movementSpeed);
@@ -57,6 +58,7 @@ void Player::keyboardInput()
 
 void Player::keyboardInput2()
 {
+	_playerstate = 2;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		rect.move(0, -_movementSpeed);

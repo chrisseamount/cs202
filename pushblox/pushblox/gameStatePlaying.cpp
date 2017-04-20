@@ -61,19 +61,32 @@ namespace State
 		}*/
 		if (playerOne.rect.getGlobalBounds().intersects(playerTwo.rect.getGlobalBounds()))
 		{
-			if(playerOne._xdirection == 1)//Moving Right
+
+			if (playerTwo._playerstate == 2)//if Playertwo has knockback ability
 			{
-				playerOne.rect.move(-playerOne._movementSpeed, 0);
+				if (playerTwo._xdirection == 1)//Playertwo: Moving Right
+				{
+					playerOne.rect.move(playerOne._movementSpeed, 0); //Knockback PlayerOne Right 
+				}
+				if (playerTwo._xdirection == -1)// Playertwo: Moving Left
+				{
+					playerOne.rect.move(-playerOne._movementSpeed, 0); //Knockback PlayerOne Left
+				}
+			} else {
+				if (playerOne._xdirection == 1)//Moving Right
+				{
+					playerOne.rect.move(-playerOne._movementSpeed, 0);
+				}
+				if (playerOne._xdirection == -1)//Moving Left
+				{
+					playerOne.rect.move(playerOne._movementSpeed, 0);
+				}
+
+				playerOne._xdirection = 0;
+				playerOne._ydirection = 0;
 			}
-			if (playerOne._xdirection == -1)//Moving Left
-			{
-				playerOne.rect.move(playerOne._movementSpeed, 0);
-			}
-			
-			playerOne._xdirection = 0;
-			playerOne._ydirection = 0;
 		}
-		/*if (playerTwo.rect.getGlobalBounds().intersects(playerOne.rect.getGlobalBounds()))
+		if (playerTwo.rect.getGlobalBounds().intersects(playerOne.rect.getGlobalBounds()))
 		{
 			if (playerTwo._xdirection == 1)//Moving Right
 			{
@@ -86,7 +99,7 @@ namespace State
 			
 			playerTwo._xdirection = 0;
 			playerTwo._ydirection = 0;
-		}*/
+		}
 
 	}
 	//This draws to the screen
