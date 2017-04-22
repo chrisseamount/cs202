@@ -18,5 +18,6 @@ namespace State
 
 	private:
 		Player playerOne;
+		Player playerTwo;
 	};
 }
