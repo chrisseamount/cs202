@@ -6,12 +6,12 @@
 Player::Player()
 {
 	loadTexture();
-	Display::setView();
 	rect.setSize(sf::Vector2f(60, 65));
 	rect.setPosition(1500, 1500);
 	rect.setFillColor(sf::Color::Black);
 	sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 	sprite.scale(2, 2);
+	Display::setView(rect.getPosition().x+16, rect.getPosition().y+16, 1920, 1080);
 }
 
 Player::~Player()

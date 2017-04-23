@@ -31,6 +31,13 @@ Background::Background()
 	bridge4.setFillColor(sf::Color::Red);
 	bridge4.setPosition(1350, 1950); 
 	bridge4.setSize(sf::Vector2f(300, 600));
+
+	loadTexture(outerSquare,outerSquareTex,"");
+	loadTexture(innerSquare,innerSquareTex,"");
+	loadTexture(bridge1,bridge1Tex,"");
+	loadTexture(bridge2,bridge2Tex,"");
+	loadTexture(bridge3,bridge3Tex,"");
+	loadTexture(bridge4,bridge4Tex,"");
 }
 
 Background::~Background()
@@ -62,6 +69,16 @@ bool Background::isSafe(Player& playerOne)
 		return true;
 	}
 	return false;
+}
+
+void Background::loadTexture(sf::RectangleShape& shape,sf::Texture& texture, char* path)
+{
+	if (!texture.loadFromFile(path))
+	{
+		return;
+	}
+
+	shape.setTexture(&texture);
 }
 
 void Background::draw()

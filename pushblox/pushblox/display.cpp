@@ -55,10 +55,10 @@ namespace Display
 		return window->isOpen();
 	}
 
-	void setView()
+	void setView(int centerX, int centerY, int sizeX, int sizeY)
 	{
-		view->setSize(1920, 1080);
-		view->setCenter(1532, 1468);
+		view->setSize(sizeX, sizeY);
+		view->setCenter(centerX, centerY);
 	}
 
 	void changeView(float w, float h)
@@ -66,4 +66,8 @@ namespace Display
 		view->move(w, h);
 	}
 
+	void closeWindow()
+	{
+		window->close();
+	}
 }

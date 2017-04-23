@@ -13,8 +13,10 @@ namespace Display
 	void checkWindowEvents();
 
 	
-	void setView();
+	void setView(int centerX, int centerY, int sizeX, int sizeY);
 	void changeView(float w, float h);
+
+	void closeWindow();
 
 	const int HEIGHT = 720;
 	const int WIDTH = 1280;
