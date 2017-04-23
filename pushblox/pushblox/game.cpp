@@ -20,11 +20,6 @@ void Game::gameLoop()
 	sf::Clock clock;
 	sf::Time dt;
 	
-	if (!backgroundTex.loadFromFile("magecity.png"))
-	{
-		return;
-	}
-	background.setTexture(backgroundTex);
 	
 	while (Display::isOpen())
 	{
@@ -39,7 +34,6 @@ void Game::gameLoop()
 		
 
 		_states.top()->update(0.0);
-		Display::draw(background);
 		_states.top()->draw();
 
 		Display::display();

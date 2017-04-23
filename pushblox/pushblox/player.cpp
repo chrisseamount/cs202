@@ -1,5 +1,6 @@
 #include "player.h"
 #include "display.h"
+#include "background.h"
 
 
 Player::Player()
@@ -7,7 +8,7 @@ Player::Player()
 	loadTexture();
 	Display::setView();
 	rect.setSize(sf::Vector2f(60, 65));
-	rect.setPosition(400, 200);
+	rect.setPosition(1500, 1500);
 	rect.setFillColor(sf::Color::Black);
 	sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 	sprite.scale(2, 2);
@@ -71,5 +72,7 @@ void Player::loadTexture()
 
 void Player::draw()
 {
+	Display::draw(rect);
 	Display::draw(sprite);
+	
 }

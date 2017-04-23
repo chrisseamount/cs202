@@ -16,6 +16,6 @@ namespace Display
 	void setView();
 	void changeView(float w, float h);
 
-	const int HEIGHT = 600;
-	const int WIDTH = 800;
+	const int HEIGHT = 720;
+	const int WIDTH = 1280;
 }

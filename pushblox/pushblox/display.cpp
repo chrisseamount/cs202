@@ -57,8 +57,8 @@ namespace Display
 
 	void setView()
 	{
-		view->setSize(3200, 2400);
-		view->setCenter(432, 268);
+		view->setSize(1920, 1080);
+		view->setCenter(1532, 1468);
 	}
 
 	void changeView(float w, float h)

@@ -3,6 +3,7 @@
 #include "gameState.h"
 #include "player.h"
 #include "background.h"
+#include <memory>
 
 namespace State
 {

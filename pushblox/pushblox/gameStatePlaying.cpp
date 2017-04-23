@@ -1,16 +1,21 @@
 #include "gameStatePlaying.h"
-
+#include "display.h"
 
 namespace State
 {
 	GameStatePlaying::GameStatePlaying(Game& game) : GameState(game)
 	{
-
+		
 	}
 
 	void GameStatePlaying::input(sf::Time& dt)
 	{
 		player.input(dt);
+
+		if (!background.checkCollisions(player))
+		{
+			Display::clear();
+		}
 	}
 
 	void GameStatePlaying::update(double dt)
