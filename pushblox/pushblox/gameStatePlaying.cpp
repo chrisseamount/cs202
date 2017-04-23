@@ -12,10 +12,7 @@ namespace State
 	{
 		player.input(dt);
 
-		if (!background.checkCollisions(player))
-		{
-			Display::clear();
-		}
+		
 	}
 
 	void GameStatePlaying::update(double dt)
@@ -27,5 +24,10 @@ namespace State
 	{
 		background.draw();
 		player.draw();
+
+		if (!background.checkCollisions(player))
+		{
+			Display::clear();
+		}
 	}
 }

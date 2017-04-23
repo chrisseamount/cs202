@@ -72,7 +72,6 @@ void Player::loadTexture()
 
 void Player::draw()
 {
-	Display::draw(rect);
 	Display::draw(sprite);
 	
 }
