@@ -1,4 +1,5 @@
 #include "gameState.h"
+#include "display.h"
 
 namespace State
 {
@@ -10,7 +11,7 @@ namespace State
 		if (!_font.loadFromFile("Trench.ttf"))
 		{}
 	}
-	void GameState::checkCollisionsOfPlayers(Player& playerOne, Player& playerTwo)
+	void GameState::checkCollisionsOfPlayers(Player& playerOne, Player& playerTwo,sf::Time dt)
 	{
 		//Checks Player collision
 
@@ -46,36 +47,42 @@ namespace State
 		}*/
 		if (playerOne.rect.getGlobalBounds().intersects(playerTwo.rect.getGlobalBounds()))
 		{
-
+			
 			if (playerTwo._playerState == 2)//if Playertwo has knockback ability
 			{
 				if (playerTwo._xDirection == 1)//Playertwo: Moving Right
 				{
-					playerOne.rect.move(playerOne._movementSpeed, 0); //Knockback PlayerOne Right 
+					playerOne.rect.move(playerOne._movementSpeed * dt.asSeconds(), 0); //Knockback PlayerOne Right 
+					Display::changeView(playerOne._movementSpeed * dt.asSeconds(), 0);
 				}
 				if (playerTwo._xDirection == -1)// Playertwo: Moving Left
 				{
-					playerOne.rect.move(-playerOne._movementSpeed, 0); //Knockback PlayerOne Left
+					playerOne.rect.move(-playerOne._movementSpeed * dt.asSeconds(), 0); //Knockback PlayerOne Left
+					Display::changeView(-playerOne._movementSpeed * dt.asSeconds(), 0);
 				}
 			}else{
 				//x-axis
 				if (playerOne._xDirection == 1)//Moving Right
 				{
-					playerOne.rect.move(-playerOne._movementSpeed, 0);
+					playerOne.rect.move(-playerOne._movementSpeed * dt.asSeconds(), 0);
+					Display::changeView(-playerOne._movementSpeed * dt.asSeconds(), 0);
 				}
 				if (playerOne._xDirection == -1)//Moving Left
 				{
-					playerOne.rect.move(playerOne._movementSpeed, 0);
+					playerOne.rect.move(playerOne._movementSpeed * dt.asSeconds(), 0);
+					Display::changeView(playerOne._movementSpeed * dt.asSeconds(), 0);
 				}
 
 				//y-axis
 				if (playerOne._yDirection == 1)//Moving up
 				{
-					playerOne.rect.move(0, playerOne._movementSpeed);
+					playerOne.rect.move(0, playerOne._movementSpeed * dt.asSeconds());
+					Display::changeView(0, playerOne._movementSpeed * dt.asSeconds());
 				}
 				if (playerOne._yDirection == -1)//Moving down
 				{
-					playerOne.rect.move(0, -playerOne._movementSpeed);
+					playerOne.rect.move(0, -playerOne._movementSpeed * dt.asSeconds());
+					Display::changeView(0, -playerOne._movementSpeed * dt.asSeconds());
 				}
 
 
@@ -88,21 +95,25 @@ namespace State
 			//x-axis
 			if (playerTwo._xDirection == 1)//Moving Right
 			{
-				playerTwo.rect.move(-playerTwo._movementSpeed, 0);
+				playerTwo.rect.move(-playerTwo._movementSpeed * dt.asSeconds(), 0);
+				Display::changeView(-playerTwo._movementSpeed * dt.asSeconds(), 0);
 			}
 			if (playerTwo._xDirection == -1)//Moving Left
 			{
-				playerTwo.rect.move(playerTwo._movementSpeed, 0);
+				playerTwo.rect.move(playerTwo._movementSpeed * dt.asSeconds(), 0);
+				Display::changeView(playerTwo._movementSpeed * dt.asSeconds(), 0);
 			}
 
 			//y-axis
 			if (playerTwo._yDirection == 1)//Moving up
 			{
-				playerTwo.rect.move(0, playerTwo._movementSpeed);
+				playerTwo.rect.move(0, playerTwo._movementSpeed * dt.asSeconds());
+				Display::changeView(0, playerTwo._movementSpeed * dt.asSeconds());
 			}
 			if (playerTwo._yDirection == -1)//Moving down
 			{
-				playerTwo.rect.move(0, -playerTwo._movementSpeed);
+				playerTwo.rect.move(0, -playerTwo._movementSpeed * dt.asSeconds());
+				Display::changeView(0, -playerTwo._movementSpeed * dt.asSeconds());
 			}
 		}
 		playerTwo._xDirection = 0;

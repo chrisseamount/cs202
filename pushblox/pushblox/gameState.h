@@ -29,7 +29,7 @@ namespace State
 		virtual void draw() = 0;
 
 		void loadFont();
-		void checkCollisionsOfPlayers(Player& playerOne, Player& playerTwo);
+		void checkCollisionsOfPlayers(Player& playerOne, Player& playerTwo,sf::Time);
 
 	protected:
 		Game* _game;

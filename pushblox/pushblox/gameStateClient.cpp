@@ -11,7 +11,13 @@ namespace State
 		_playerOne.loadTexture();
 		_playerTwo.loadTexture();
 		
+		_playerOne.sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
+		_playerOne.startPos = 0;
+		_playerTwo.sprite.setTextureRect(sf::IntRect(96, 0, 32, 32));
+		_playerTwo.startPos = 96;
+
 		_playerOne.rect.setPosition(2900, 100);
+		Display::setView(2900, 100, 1920, 1080);
 		_playerTwo.rect.setPosition(100, 100);
 		
 		client();
@@ -29,7 +35,7 @@ namespace State
 	//This gets keyboard input
 	void GameStateClient::input(sf::Time dt)
 	{
-		checkCollisionsOfPlayers(_playerOne, _playerTwo);
+		checkCollisionsOfPlayers(_playerOne, _playerTwo,dt);
 		_playerOne.keyboardInput(dt);
 	}
 
@@ -93,19 +99,19 @@ namespace State
 		{
 			if (_playerDirectionR == 1)
 			{
-				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
+				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32 + _playerTwo.startPos, 32 * 3, 32, 32));
 			}
 			else if (_playerDirectionR == 2)
 			{
-				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
+				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32 + _playerTwo.startPos, 0, 32, 32));
 			}
 			else if (_playerDirectionR == 3)
 			{
-				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
+				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32 + _playerTwo.startPos, 32 * 1, 32, 32));
 			}
 			else if (_playerDirectionR == 4)
 			{
-				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
+				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32 + _playerTwo.startPos, 32 * 2, 32, 32));
 			}
 			_counterWalking++;
 			if (_counterWalking == 3)

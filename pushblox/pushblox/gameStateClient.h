@@ -53,7 +53,7 @@ namespace State
 
 		//Used for networking
 		const unsigned short PORT = 6032;
-		const std::string IPADDRESS = "192.168.56.1";
+		const std::string IPADDRESS = "172.22.25.52";
 
 		//Networking Objects. Important.
 		sf::TcpSocket _socket;		//Used to send packets of data
