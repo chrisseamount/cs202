@@ -5,9 +5,11 @@
 Player::Player()
 {
 	rect.setSize(sf::Vector2f(60, 65));
-	//rect.setPosition(400, 200);			//We must define the position in the states
+	rect.setPosition(1500, 1500);			//We must define the position in the states
 	rect.setFillColor(sf::Color::White);
 	
+	Display::setView(rect.getPosition().x,rect.getPosition().y, 800, 600);
+
 	sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 	sprite.scale(2.0f, 2.0f);
 }
@@ -23,6 +25,7 @@ void Player::keyboardInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
 		rect.move(0, -_movementSpeed);
+		Display::changeView(0, -_movementSpeed);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
 		_yDirection = 1;
 		_direction = 1;
@@ -31,6 +34,7 @@ void Player::keyboardInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		rect.move(0, _movementSpeed);
+		Display::changeView(0, _movementSpeed);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
 		_yDirection = -1;
 		_direction = 2;
@@ -39,6 +43,7 @@ void Player::keyboardInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
 		rect.move(-_movementSpeed, 0);
+		Display::changeView(-_movementSpeed,0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
 		_xDirection = -1;
 		_direction = 3;
@@ -47,6 +52,7 @@ void Player::keyboardInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		rect.move(_movementSpeed, 0);
+		Display::changeView(_movementSpeed,0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
 		_xDirection = 1;
 		_direction = 4;

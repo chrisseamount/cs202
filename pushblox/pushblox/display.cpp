@@ -19,9 +19,9 @@ namespace Display
 		view = std::make_unique<sf::View>(sf::FloatRect(0, 0, 1, 1));
 	}
 
-	void clear()
+	void clear(sf::Color color)
 	{
-		window->clear();
+		window->clear(color);
 	}
 
 	void display()

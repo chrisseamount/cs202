@@ -5,7 +5,7 @@
 namespace Display
 {
 	void init();
-	void clear();
+	void clear(sf::Color color);
 	void display();
 	void draw(const sf::Drawable& drawable);
 
