@@ -15,17 +15,22 @@ Game::Game()
 
 void Game::gameLoop()
 {
+	sf::Clock clock;
+	sf::Time dt;
+	
 	while (Display::isOpen())
 	{
 		Display::checkWindowEvents();
 
 		Display::clear(sf::Color::Black);
 
-		_states.top()->input();
+		_states.top()->input(dt);
 		_states.top()->update(0.0);
 		_states.top()->draw();
 
 		Display::display();
+
+		dt = clock.restart();
 	}
 }
 

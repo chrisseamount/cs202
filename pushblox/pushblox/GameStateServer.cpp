@@ -11,8 +11,8 @@ namespace State
 		//This loads the texture and sets the position of the players onto the screen
 		_playerOne.loadTexture();
 		_playerTwo.loadTexture();
-		_playerOne.rect.setPosition(400, 200);
-		_playerTwo.rect.setPosition(400, 100);
+		_playerOne.rect.setPosition(100, 100);
+		_playerTwo.rect.setPosition(2900, 100);
 
 		//This is for the server. It listens for incoming connections
 		_threadListener = std::make_unique<sf::Thread>(&GameStateServer::server, this);
@@ -37,10 +37,10 @@ namespace State
 	}
 
 	//This gets keyboard input
-	void GameStateServer::input()
+	void GameStateServer::input(sf::Time dt)
 	{
 		checkCollisions(_playerOne, _playerTwo);
-		_playerOne.keyboardInput2();
+		_playerOne.keyboardInput2(dt);
 		syncStatus(); //Networking function to send packets of data
 
 		if (_playerOne._direction == 1)

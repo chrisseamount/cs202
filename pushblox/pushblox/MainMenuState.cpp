@@ -28,7 +28,7 @@ namespace State
 	}
 
 	//This gets keyboard input
-	void MainMenuState::input()
+	void MainMenuState::input(sf::Time dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
 		{

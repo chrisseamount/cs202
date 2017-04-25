@@ -12,7 +12,7 @@ namespace State
 	public:
 		MainMenuState(Game& game);
 
-		void input();
+		void input(sf::Time dt);
 		void update(double dt);
 		void draw();
 

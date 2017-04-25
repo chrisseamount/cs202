@@ -7,8 +7,8 @@ class Player : public Entity
 public:
 	Player();
 	void updateSpritePosition();
-	void keyboardInput();
-	void keyboardInput2();
+	void keyboardInput(sf::Time dt);
+	void keyboardInput2(sf::Time dt);
 	void drawToWindow();
 	void loadTexture();
 	sf::Texture playerTexture;

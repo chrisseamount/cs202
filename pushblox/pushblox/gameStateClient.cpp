@@ -26,10 +26,10 @@ namespace State
 		_text.setPosition(Display::HEIGHT / 2, 10);
 	}
 	//This gets keyboard input
-	void GameStateClient::input()
+	void GameStateClient::input(sf::Time dt)
 	{
 		checkCollisions(_playerOne, _playerTwo);
-		_playerOne.keyboardInput();
+		_playerOne.keyboardInput(dt);
 	}
 
 	//This updates the window for the objects
