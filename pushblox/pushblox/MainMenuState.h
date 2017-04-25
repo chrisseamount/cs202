@@ -6,6 +6,14 @@
 #include <memory>
 #include "Sounds.h"
 
+#include "game.h"
+#include "gameStateClient.h"
+#include "display.h"
+#include "GameStateServer.h"
+
+#include <memory>
+#include <iostream>
+
 namespace State
 {
 	class MainMenuState : public GameState

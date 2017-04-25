@@ -1,7 +1,4 @@
 #include "gameStateServer.h"
-#include "PausedState.h"
-#include "game.h"
-#include <memory>
 
 namespace State
 {

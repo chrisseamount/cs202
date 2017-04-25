@@ -6,6 +6,8 @@
 #include <SFML/Network.hpp>
 #include <memory>
 #include <string>
+#include "PausedState.h"
+#include "game.h"
 
 namespace State
 {

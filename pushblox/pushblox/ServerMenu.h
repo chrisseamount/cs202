@@ -4,6 +4,10 @@
 #include "entity.h"
 #include <iostream>
 #include <memory>
+#include "game.h"
+#include "PausedState.h"
+#include "display.h"
+#include "MainMenuState.h"
 
 namespace State
 {

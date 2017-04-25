@@ -1,6 +1,4 @@
 #include "player.h"
-#include "display.h"
-#include <iostream>
 
 Player::Player()
 {
