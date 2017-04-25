@@ -8,7 +8,7 @@ Player::Player()
 	rect.setPosition(1500, 1500);			//We must define the position in the states
 	rect.setFillColor(sf::Color::White);
 	
-	Display::setView(rect.getPosition().x,rect.getPosition().y, 800, 600);
+	Display::setView(rect.getPosition().x,rect.getPosition().y, 1920, 1080);
 
 	sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 	sprite.scale(2.0f, 2.0f);

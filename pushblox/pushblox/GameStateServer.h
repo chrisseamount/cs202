@@ -2,6 +2,7 @@
 
 #include "gameState.h"
 #include "player.h"
+#include "background.h"
 #include <iostream>
 #include <SFML/Network.hpp>
 #include <memory>
@@ -28,6 +29,7 @@ namespace State
 		//Objects used to for the server side
 		Player _playerOne;
 		Player _playerTwo;
+		Background background;
 		sf::RectangleShape _rect;
 		sf::Text _text2;
 		

@@ -71,6 +71,12 @@ namespace State
 	//This draws to the screen
 	void GameStateServer::draw()
 	{
+		background.draw();
+		if (!background.checkCollisions(_playerOne))
+		{
+			Display::clear(sf::Color::Black);
+		}
+
 		_playerOne.drawToWindow();
 		_playerTwo.drawToWindow();
 		Display::draw(_rect);
