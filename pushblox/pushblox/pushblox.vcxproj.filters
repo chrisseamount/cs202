@@ -88,6 +88,9 @@
     <Image Include="Finally.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="white-brick-wall.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Trench.ttf">

@@ -28,9 +28,10 @@ namespace State
 		virtual void draw() = 0;
 
 		void loadFont();
-
+		//void loadMenuBackTexture();
 	protected:
 		Game* _game;
+		//sf::Texture _mainMenuBackground;
 		sf::Text _text;
 		sf::Font _font;
 	};

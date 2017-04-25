@@ -10,4 +10,7 @@ namespace State
 		if (!_font.loadFromFile("Trench.ttf"))
 		{}
 	}
+	
+
+
 }

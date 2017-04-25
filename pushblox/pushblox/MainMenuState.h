@@ -11,12 +11,16 @@ namespace State
 	{
 	public:
 		MainMenuState(Game& game);
-
 		void input();
 		void update(double dt);
 		void draw();
-
+		sf::Texture _mainMenuTexture;
 	private:
-		sf::RectangleShape rectangle;
+		
+		sf::Sprite mainMenuBackground;
+		sf::Text hostGameText;
+		sf::Text clientGameText;
+		sf::Text settingsText;
+		sf::Text aboutText;
 	};
 }
