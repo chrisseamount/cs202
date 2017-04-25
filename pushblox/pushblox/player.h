@@ -6,6 +6,7 @@ class Player : public Entity
 {
 public:
 	Player();
+	Player(bool);
 	void updateSpritePosition();
 	void keyboardInput(sf::Time dt);
 	void keyboardInput2(sf::Time dt);
@@ -19,11 +20,12 @@ public:
 	int _direction = 1;
 	int _counterWalking = 0;
 	int _isRunning = 0;
-	int _movementSpeed = 5;
+	int _movementSpeed = 1;
 	
 	int _xDirection = 0;
 	int _yDirection = 0;
 	int _playerState = 0;
+	bool _ifPlayer = true;
 
 
 private:

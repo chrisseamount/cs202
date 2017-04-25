@@ -27,7 +27,7 @@ namespace State
 	private:
 
 		//Objects used to for the server side
-		Player _playerOne;
+		Player _playerOne(true);
 		Player _playerTwo;
 		Background background;
 		sf::RectangleShape _rect;

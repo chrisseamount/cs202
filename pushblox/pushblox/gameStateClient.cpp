@@ -10,8 +10,9 @@ namespace State
 	{
 		_playerOne.loadTexture();
 		_playerTwo.loadTexture();
-		_playerOne.rect.setPosition(400, 200);
-		_playerTwo.rect.setPosition(400, 100);
+		
+		_playerOne.rect.setPosition(2900, 100);
+		_playerTwo.rect.setPosition(100, 100);
 		
 		client();
 
@@ -28,7 +29,7 @@ namespace State
 	//This gets keyboard input
 	void GameStateClient::input(sf::Time dt)
 	{
-		checkCollisions(_playerOne, _playerTwo);
+		checkCollisionsOfPlayers(_playerOne, _playerTwo);
 		_playerOne.keyboardInput(dt);
 	}
 
@@ -42,6 +43,12 @@ namespace State
 	//This draws to the screen
 	void GameStateClient::draw()
 	{
+		background.draw();
+		if (!background.checkCollisions(_playerOne))
+		{
+			Display::clear(sf::Color::Black);
+		}
+		
 		_playerOne.drawToWindow();
 		_playerTwo.drawToWindow();
 		Display::draw(_rect);

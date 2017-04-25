@@ -10,7 +10,7 @@ namespace State
 		if (!_font.loadFromFile("Trench.ttf"))
 		{}
 	}
-	void GameState::checkCollisions(Player& playerOne, Player& playerTwo)
+	void GameState::checkCollisionsOfPlayers(Player& playerOne, Player& playerTwo)
 	{
 		//Checks Player collision
 

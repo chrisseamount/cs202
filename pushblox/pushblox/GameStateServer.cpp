@@ -39,7 +39,8 @@ namespace State
 	//This gets keyboard input
 	void GameStateServer::input(sf::Time dt)
 	{
-		checkCollisions(_playerOne, _playerTwo);
+		checkCollisionsOfPlayers(_playerOne, _playerTwo);
+		
 		_playerOne.keyboardInput2(dt);
 		syncStatus(); //Networking function to send packets of data
 
@@ -71,6 +72,7 @@ namespace State
 	//This draws to the screen
 	void GameStateServer::draw()
 	{
+		//Chris's code
 		background.draw();
 		if (!background.checkCollisions(_playerOne))
 		{

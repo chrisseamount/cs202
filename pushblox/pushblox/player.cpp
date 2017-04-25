@@ -4,11 +4,18 @@
 
 Player::Player()
 {
-	rect.setSize(sf::Vector2f(60, 65));
-	rect.setPosition(1500, 1500);			//We must define the position in the states
-	rect.setFillColor(sf::Color::White);
-	
-	Display::setView(rect.getPosition().x,rect.getPosition().y, 1920, 1080);
+	rect.setSize(sf::Vector2f(60, 65));		//We must define the position in the states
+	rect.setFillColor(sf::Color::Red);
+
+	sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
+	sprite.scale(2.0f, 2.0f);
+}
+Player::Player(bool _ifIsPlaying)
+{
+	rect.setSize(sf::Vector2f(60, 65));		//We must define the position in the states
+	rect.setFillColor(sf::Color::Red);
+
+	Display::setView(rect.getPosition().x, rect.getPosition().y, 1920, 1080);
 
 	sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 	sprite.scale(2.0f, 2.0f);
@@ -68,6 +75,7 @@ void Player::keyboardInput(sf::Time dt)
 }
 void Player::keyboardInput2(sf::Time dt)
 {
+	_movementSpeed = 1500;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		rect.move(0, -_movementSpeed * dt.asSeconds());
