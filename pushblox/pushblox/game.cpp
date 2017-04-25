@@ -15,6 +15,10 @@ Game::Game()
 	pushState(std::make_unique<State::GameStatePlaying>(*this));
 }
 
+Game::~Game()
+{
+}
+
 void Game::gameLoop()
 {
 	sf::Clock clock;

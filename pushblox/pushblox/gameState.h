@@ -13,6 +13,7 @@ namespace State
 	{
 	public:
 		GameState(Game& game);
+		virtual ~GameState();
 		
 		virtual void input(sf::Time& dt) = 0;
 		virtual void update(double dt) = 0;

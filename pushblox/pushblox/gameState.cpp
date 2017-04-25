@@ -6,4 +6,7 @@ namespace State
 	{
 
 	}
+	GameState::~GameState()
+	{
+	}
 }

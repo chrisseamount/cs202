@@ -15,9 +15,7 @@ namespace Display
 
 	void init()
 	{
-		sf::ContextSettings settings;
-		settings.antialiasingLevel = 16;
-		window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "PushBlox",sf::Style::Default, settings);
+		window = std::make_unique<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "PushBlox",sf::Style::Default);
 		view = std::make_unique<sf::View>(sf::FloatRect(0, 0, 1, 1));
 	}
 

@@ -13,6 +13,7 @@ class Game
 {
 public:
 	Game();
+	~Game();
 	void gameLoop();
 
 	void pushState(std::unique_ptr<State::GameState > state);

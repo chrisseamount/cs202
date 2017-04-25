@@ -11,6 +11,7 @@ namespace State
 	{
 	public:
 		GameStatePlaying(Game& game);
+		~GameStatePlaying();
 		
 		void input(sf::Time& dt);
 		void update(double dt);

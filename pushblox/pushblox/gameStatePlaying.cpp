@@ -8,6 +8,11 @@ namespace State
 		
 	}
 
+	GameStatePlaying::~GameStatePlaying()
+	{
+		Display::clear();
+	}
+
 	void GameStatePlaying::input(sf::Time& dt)
 	{
 		player.input(dt);
