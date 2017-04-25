@@ -1,22 +1,22 @@
-#pragma once
-
-#include<SFML/Graphics.hpp>
-
-/*
-Display is just a display throughout the game. It uses one window so that the game can switch between states. 
-Every object is drawn to the screen everytime something has been changed.
-*/
-
-namespace Display
-{
-	void init();
-	void clear();
-	void display();
-	void draw(const sf::Drawable& drawable);
-
-	bool isOpen();
-	void checkWindowEvents();
-
-	const int HEIGHT = 600;
-	const int WIDTH = 800;
+#pragma once
+
+#include<SFML/Graphics.hpp>
+
+namespace Display
+{
+	void init();
+	void clear();
+	void display();
+	void draw(const sf::Drawable& drawable);
+
+	bool isOpen();
+	void checkWindowEvents();
+	
+	void setView(int centerX, int centerY, int sizeX, int sizeY);
+	void changeView(float w, float h);
+
+	void closeWindow();
+
+	const int HEIGHT = 720;
+	const int WIDTH = 1280;
 }
