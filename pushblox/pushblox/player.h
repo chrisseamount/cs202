@@ -19,8 +19,13 @@ public:
 	int _direction = 1;
 	int _counterWalking = 0;
 	int _isRunning = 0;
+	int _movementSpeed = 5;
+	
+	int _xDirection = 0;
+	int _yDirection = 0;
+	int _playerState = 0;
+
 
 private:
-	int _movementSpeed = 5;
 	int _spritePosition = 32;
 };

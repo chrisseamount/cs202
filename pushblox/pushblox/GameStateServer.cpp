@@ -39,6 +39,7 @@ namespace State
 	//This gets keyboard input
 	void GameStateServer::input()
 	{
+		checkCollisions(_playerOne, _playerTwo);
 		_playerOne.keyboardInput2();
 		syncStatus(); //Networking function to send packets of data
 
@@ -101,6 +102,7 @@ namespace State
 		_globalMutex.lock();
 		_playerOneX = _playerOne.rect.getPosition().x;
 		_playerOneY = _playerOne.rect.getPosition().y;
+		_playerDirection = _playerOne.getDirection();
 		_globalMutex.unlock();
 
 		//This locks a message into a packet
@@ -121,22 +123,18 @@ namespace State
 		{
 			if (_playerDirectionR == 1)
 			{
-				_text.setString("Up");
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
 			}
 			else if (_playerDirectionR == 2)
 			{
-				_text.setString("Down");
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
 			}
 			else if (_playerDirectionR == 3)
 			{
-				_text.setString("Left");
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
 			}
 			else if (_playerDirectionR == 4)
 			{
-				_text.setString("Right");
 				_playerTwo.sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
 			}
 			_counterWalking++;

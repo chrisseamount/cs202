@@ -48,8 +48,8 @@ namespace State
 		unsigned short int _playerOneIsRunningR;
 
 		//Used for Networking
-		const unsigned short PORT = 5042;
-		const std::string IPADDRESS = "172.22.25.147";
+		const unsigned short PORT = 6032;
+		const std::string IPADDRESS = "172.22.25.67";
 		//const std::string IPADDRESS = sf::IpAddress::getLocalAddress();  // My address on the local network
 
 		//Networking objects. Important.

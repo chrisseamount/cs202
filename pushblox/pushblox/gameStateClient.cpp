@@ -13,8 +13,7 @@ namespace State
 		_playerOne.rect.setPosition(400, 200);
 		_playerTwo.rect.setPosition(400, 100);
 		
-		_threadClient = std::make_unique<sf::Thread>(&GameStateClient::client, this);
-		_threadClient->launch();
+		client();
 
 		_rect.setSize(sf::Vector2f(10, 10));
 		_rect.setFillColor(sf::Color::Blue);
@@ -29,6 +28,7 @@ namespace State
 	//This gets keyboard input
 	void GameStateClient::input()
 	{
+		checkCollisions(_playerOne, _playerTwo);
 		_playerOne.keyboardInput();
 	}
 
@@ -36,7 +36,7 @@ namespace State
 	void GameStateClient::update(double dt)
 	{
 		_playerOne.updateSpritePosition();
-		_playerTwo.updateSpritePosition();	
+		_playerTwo.updateSpritePosition();
 	}
 
 	//This draws to the screen

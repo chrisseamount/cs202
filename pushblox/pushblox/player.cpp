@@ -24,6 +24,7 @@ void Player::keyboardInput()
 	{
 		rect.move(0, -_movementSpeed);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
+		_yDirection = 1;
 		_direction = 1;
 		_isRunning = 1;
 	}
@@ -31,6 +32,7 @@ void Player::keyboardInput()
 	{
 		rect.move(0, _movementSpeed);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
+		_yDirection = -1;
 		_direction = 2;
 		_isRunning = 1;
 	}
@@ -38,6 +40,7 @@ void Player::keyboardInput()
 	{
 		rect.move(-_movementSpeed, 0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
+		_xDirection = -1;
 		_direction = 3;
 		_isRunning = 1;
 	}
@@ -45,6 +48,7 @@ void Player::keyboardInput()
 	{
 		rect.move(_movementSpeed, 0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
+		_xDirection = 1;
 		_direction = 4;
 		_isRunning = 1;
 	}
@@ -61,6 +65,7 @@ void Player::keyboardInput2()
 	{
 		rect.move(0, -_movementSpeed);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 3, 32, 32));
+		_yDirection = 1;
 		_direction = 1;
 		_isRunning = 1;
 	}
@@ -68,6 +73,7 @@ void Player::keyboardInput2()
 	{
 		rect.move(0, _movementSpeed);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 0, 32, 32));
+		_yDirection = -1;
 		_direction = 2;
 		_isRunning = 1;
 	}
@@ -75,6 +81,7 @@ void Player::keyboardInput2()
 	{
 		rect.move(-_movementSpeed, 0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 1, 32, 32));
+		_xDirection = -1;
 		_direction = 3;
 		_isRunning = 1;
 	}
@@ -82,6 +89,7 @@ void Player::keyboardInput2()
 	{
 		rect.move(_movementSpeed, 0);
 		sprite.setTextureRect(sf::IntRect(_counterWalking * 32, 32 * 2, 32, 32));
+		_xDirection = 1;
 		_direction = 4;
 		_isRunning = 1;
 	}
