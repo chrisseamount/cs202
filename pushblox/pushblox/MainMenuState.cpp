@@ -19,11 +19,13 @@ namespace State
 	MainMenuState::MainMenuState(Game& game) : GameState(game)
 	{
 
-		if()
-		mainMenuBackground.setTexture(mainMenuTexture); //Sprite
-		//mainMenuBackground.setPosition(/*sf::Vector2f(0,0)*/);
-		//mainMenuBackground.setScale(/*sf::Vector2f(100, 100)*/);
-		//mainMenuBackground.setColor(/*sf::Color(0, 255, 0)*/);
+		if (_mainMenuTexture.loadFromFile("white-brick-wall.jpg"))
+		{
+			mainMenuBackground.setTexture(_mainMenuTexture); //Sprite
+			//mainMenuBackground.setPosition(/*sf::Vector2f(0,0)*/);
+			//mainMenuBackground.setScale(/*sf::Vector2f(100, 100)*/);
+			//mainMenuBackground.setColor(/*sf::Color(0, 255, 0)*/);
+		}
 
 
 		//This is the main menu logo
@@ -34,6 +36,16 @@ namespace State
 		_text.setString("Push Blox");
 		_text.setPosition(Display::HEIGHT/2,10);
 
+		//rectangle
+		menuBorderRect.setSize(sf::Vector2f(315, 175));
+		menuBorderRect.setFillColor(sf::Color::Black);
+		menuBorderRect.setPosition(Display::HEIGHT / 2 - 15, 20);
+
+		menuRect.setSize(sf::Vector2f(305, 165));
+		menuRect.setFillColor(sf::Color::White);
+		menuRect.setPosition(Display::HEIGHT/2 - 10, 25);
+
+		//texts
 		hostGameText.setFont(_font);
 		hostGameText.setCharacterSize(24);
 		hostGameText.setFillColor(sf::Color::Black);
@@ -83,6 +95,8 @@ namespace State
 	{
 		//If you want to display more items, call it after a bigger object! These objects are layered.
 		Display::draw(mainMenuBackground);
+		Display::draw(menuBorderRect);
+		Display::draw(menuRect);
 		Display::draw(_text);
 		Display::draw(hostGameText);
 		Display::draw(clientGameText);

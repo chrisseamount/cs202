@@ -18,6 +18,8 @@ namespace State
 	private:
 		
 		sf::Sprite mainMenuBackground;
+		sf::RectangleShape menuBorderRect;
+		sf::RectangleShape menuRect;
 		sf::Text hostGameText;
 		sf::Text clientGameText;
 		sf::Text settingsText;
