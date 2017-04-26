@@ -7,6 +7,7 @@
 
 #include <memory>
 #include <iostream>
+#include <algorithm>
 /*
 Main Menu state is the main state of the game. It has a hiearchy of MainMenu to 
 */
@@ -32,11 +33,13 @@ namespace State
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
 		{
-			_game->changeState(std::make_unique<State::GameStateServer>(*_game));
+			_game->pushState(std::make_unique<State::GameStateServer>(*_game));
+			std::cout << "H is pressed" << std::endl;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
 		{
-			_game->changeState(std::make_unique<State::GameStateClient>(*_game));
+			_game->pushState(std::make_unique<State::GameStateClient>(*_game));
+			std::cout << "C is pressed" << std::endl;
 		}
 	}
 

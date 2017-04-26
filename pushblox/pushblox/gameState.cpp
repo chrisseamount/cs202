@@ -47,7 +47,8 @@ namespace State
 		}*/
 		if (playerOne.rect.getGlobalBounds().intersects(playerTwo.rect.getGlobalBounds()))
 		{
-			
+			playerOne._movementSpeed = 500;
+			playerTwo._movementSpeed = 500;
 			if (playerTwo._playerState == 2)//if Playertwo has knockback ability
 			{
 				if (playerTwo._xDirection == 1)//Playertwo: Moving Right

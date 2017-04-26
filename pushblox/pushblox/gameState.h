@@ -3,6 +3,7 @@
 #include<SFML/Window.hpp>
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
+#include <memory>
 #include "player.h"
 
 class Game;
@@ -22,7 +23,7 @@ namespace State
 	class GameState
 	{
 	public:
-		GameState(Game& game);
+		GameState( Game& game);
 		
 		virtual void input(sf::Time dt) = 0;
 		virtual void update(double dt) = 0;

@@ -3,12 +3,14 @@
 #include "game.h"
 #include <memory>
 #include "display.h"
+#include <iostream>
 
 namespace State
 {
-	GameStateServer::GameStateServer(Game& game) : GameState(game)
+	GameStateServer::GameStateServer( Game& game) : GameState(game)
 	{
 		//This loads the texture and sets the position of the players onto the screen
+		std::cout << "New Server State" << std::endl;
 		_playerOne.loadTexture();
 		_playerTwo.loadTexture();
 		_playerOne.rect.setPosition(100, 100);
@@ -45,8 +47,8 @@ namespace State
 	//This gets keyboard input
 	void GameStateServer::input(sf::Time dt)
 	{
-		checkCollisionsOfPlayers(_playerOne, _playerTwo,dt);
-		
+		checkCollisionsOfPlayers(_playerOne, _playerTwo, dt);
+
 		_playerOne.keyboardInput2(dt);
 		syncStatus(); //Networking function to send packets of data
 
@@ -66,6 +68,11 @@ namespace State
 		{
 			_text2.setString("Right");
 		}
+		if (e.type == sf::Event::Closed)
+		{
+			_game->popState();
+		}
+
 	}
 
 	//This updates the window for the objects

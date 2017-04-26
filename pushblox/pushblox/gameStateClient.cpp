@@ -3,11 +3,13 @@
 #include "game.h"
 #include "display.h"
 #include <memory>
+#include <iostream>
 
 namespace State
 {
 	GameStateClient::GameStateClient(Game& game) : GameState(game)
 	{
+		std::cout << "New Client State" << std::endl;
 		_playerOne.loadTexture();
 		_playerTwo.loadTexture();
 		

@@ -14,7 +14,8 @@ namespace State
 	class GameStateServer : public GameState
 	{
 	public:
-		GameStateServer(Game& game);
+		GameStateServer( Game& game);
+		GameStateServer(GameStateServer&) = delete;
 
 		void input(sf::Time dt);
 		void update(double dt);
@@ -32,6 +33,7 @@ namespace State
 		Background background;
 		sf::RectangleShape _rect;
 		sf::Text _text2;
+		sf::Event e;
 		
 		//Used for objects and functions
 		int _counterWalking =0;
