@@ -139,7 +139,16 @@
     <Image Include="Finally.png">
       <Filter>Resource Files</Filter>
     </Image>
+<<<<<<< HEAD
     <Image Include="magecity.png">
+=======
+    <Image Include="white-brick-wall.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Trench.ttf">
+>>>>>>> JimTMP
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

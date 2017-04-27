@@ -34,16 +34,20 @@ namespace State
 		sf::RectangleShape _rect;
 		sf::Text _text2;
 		sf::Event e;
+		sf::Time _timer;
 		
 		//Used for objects and functions
 		int _counterWalking =0;
 		bool _gameStarted = false;
+		//std::chrono::steady_clock::time_point t_initializer;
+		//std::chrono::steady_clock::time_point t_round;
 
 		//Used to send packets to another person
 		unsigned short int _playerOneX;
 		unsigned short int _playerOneY;
 		unsigned short int _playerDirection;
 		unsigned short int _playerOneIsRunning;
+		bool _playerIsIt;
 
 		//Used to turn packets into integers
 		unsigned short int _playerOneXR;
@@ -51,9 +55,11 @@ namespace State
 		unsigned short int _playerDirectionR;
 		unsigned short int _playerOneIsRunningR;
 
+		int counter = 0;
+
 		//Used for Networking
-		const unsigned short PORT = 6032;
-		const std::string IPADDRESS = "172.22.25.147";
+		const unsigned short PORT = 5042;
+		const std::string IPADDRESS = "172.20.229.25";
 		//const std::string IPADDRESS = sf::IpAddress::getLocalAddress();  // My address on the local network
 
 		//Networking objects. Important.

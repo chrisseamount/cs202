@@ -169,6 +169,9 @@
     <ClInclude Include="ServerMenu.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="white-brick-wall.jpg">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+    </Image>
     <Image Include="Finally.png" />
     <Image Include="LavaFall.png" />
     <Image Include="magecity.png" />
