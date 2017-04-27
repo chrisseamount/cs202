@@ -33,12 +33,12 @@ namespace State
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
 		{
-			_game->pushState(std::make_unique<State::GameStateServer>(*_game));
+			_game->changeState(std::make_unique<State::GameStateServer>(*_game));
 			std::cout << "H is pressed" << std::endl;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
 		{
-			_game->pushState(std::make_unique<State::GameStateClient>(*_game));
+			_game->changeState(std::make_unique<State::GameStateClient>(*_game));
 			std::cout << "C is pressed" << std::endl;
 		}
 	}

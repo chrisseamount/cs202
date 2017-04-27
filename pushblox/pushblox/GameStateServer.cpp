@@ -68,10 +68,10 @@ namespace State
 		{
 			_text2.setString("Right");
 		}
-		if (e.type == sf::Event::Closed)
+		/*if (e.type == sf::Event::Closed)
 		{
 			_game->popState();
-		}
+		}*/
 
 	}
 
