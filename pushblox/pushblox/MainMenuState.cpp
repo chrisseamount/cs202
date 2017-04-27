@@ -20,14 +20,16 @@ namespace State
 	MainMenuState::MainMenuState(Game& game) : GameState(game)
 	{
 
-		if (_mainMenuTexture.loadFromFile("white-brick-wall.jpg"))
+		if (!_mainMenuTexture.loadFromFile("white-brick-wall.jpg"))
 		{
-			mainMenuBackground.setTexture(_mainMenuTexture); //Sprite
+			std::cout << "cannot find image" << std::endl; //Sprite
 			//mainMenuBackground.setPosition(/*sf::Vector2f(0,0)*/);
 			//mainMenuBackground.setScale(/*sf::Vector2f(100, 100)*/);
 			//mainMenuBackground.setColor(/*sf::Color(0, 255, 0)*/);
 		}
+		mainMenuBackground.setTexture(_mainMenuTexture);
 
+		Display::setView(640,360,1280,720);
 
 		//This is the main menu logo
 		loadFont();
