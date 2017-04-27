@@ -53,7 +53,7 @@ namespace State
 
 		//Used for Networking
 		const unsigned short PORT = 6032;
-		const std::string IPADDRESS = "192.168.56.1";
+		const std::string IPADDRESS = "172.22.25.147";
 		//const std::string IPADDRESS = sf::IpAddress::getLocalAddress();  // My address on the local network
 
 		//Networking objects. Important.
