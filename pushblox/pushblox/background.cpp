@@ -13,31 +13,31 @@ Background::Background()
 	outerSquare.setFillColor(sf::Color::White);
 	outerSquare.setPosition(0, 0);
 	outerSquare.setSize(sf::Vector2f(3000,3000));
-	middleSquare.setFillColor(sf::Color::Black);
 	middleSquare.setPosition(500, 500);
 	middleSquare.setSize(sf::Vector2f(2000,2000));
 	innerSquare.setFillColor(sf::Color::White);
 	innerSquare.setPosition(1000, 1000);
 	innerSquare.setSize(sf::Vector2f(1000,1000));
-	bridge1.setFillColor(sf::Color::Red);
+	//bridge1.setFillColor(sf::Color::Red);
 	bridge1.setPosition(450, 1350);
 	bridge1.setSize(sf::Vector2f(600,300));
-	bridge2.setFillColor(sf::Color::Red);
+	//bridge2.setFillColor(sf::Color::Red);
 	bridge2.setPosition(1350, 450);
 	bridge2.setSize(sf::Vector2f(300, 600));
-	bridge3.setFillColor(sf::Color::Red);
+	//bridge3.setFillColor(sf::Color::Red);
 	bridge3.setPosition(1950, 1350);
 	bridge3.setSize(sf::Vector2f(600, 300));
-	bridge4.setFillColor(sf::Color::Red);
+	//bridge4.setFillColor(sf::Color::Red);
 	bridge4.setPosition(1350, 1950); 
 	bridge4.setSize(sf::Vector2f(300, 600));
 
-	loadTexture(outerSquare,outerSquareTex,"");
-	loadTexture(innerSquare,innerSquareTex,"");
-	loadTexture(bridge1,bridge1Tex,"");
-	loadTexture(bridge2,bridge2Tex,"");
-	loadTexture(bridge3,bridge3Tex,"");
-	loadTexture(bridge4,bridge4Tex,"");
+	loadTexture(outerSquare,outerSquareTex,"OutsideStone.png");
+	loadTexture(middleSquare, middleSquareTex, "LavaFall.png");
+	loadTexture(innerSquare,innerSquareTex,"MiddleStone.png");
+	loadTexture(bridge1,bridge1Tex,"WoodenBridge1.png");
+	loadTexture(bridge2,bridge2Tex,"WoodenBridge2.png");
+	loadTexture(bridge3,bridge3Tex,"WoodenBridge1.png");
+	loadTexture(bridge4,bridge4Tex,"WoodenBridge2.png");
 }
 
 Background::~Background()

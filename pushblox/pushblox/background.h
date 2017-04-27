@@ -21,6 +21,7 @@ private:
 	sf::RectangleShape outerSquare;
 	sf::Texture outerSquareTex;
 	sf::RectangleShape middleSquare;
+	sf::Texture middleSquareTex;
 	sf::RectangleShape innerSquare;
 	sf::Texture innerSquareTex;
 	sf::RectangleShape bridge1;

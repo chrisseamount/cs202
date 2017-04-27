@@ -18,6 +18,21 @@
     <Image Include="Finally.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="LavaFall.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="MiddleStone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="WoodenBridge2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="OutsideStone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="WoodenBridge1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Trench.ttf">
