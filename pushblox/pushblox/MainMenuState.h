@@ -15,8 +15,15 @@ namespace State
 		void input(sf::Time dt);
 		void update(double dt);
 		void draw();
-
+		sf::Texture _mainMenuTexture;
 	private:
-		sf::RectangleShape rectangle;
+		
+		sf::Sprite mainMenuBackground;
+		sf::RectangleShape menuBorderRect;
+		sf::RectangleShape menuRect;
+		sf::Text hostGameText;
+		sf::Text clientGameText;
+		sf::Text settingsText;
+		sf::Text aboutText;
 	};
 }

@@ -34,6 +34,7 @@ namespace State
 
 	protected:
 		Game* _game;
+		//sf::Texture _mainMenuBackground;
 		sf::Text _text;
 		sf::Font _font;
 	};
