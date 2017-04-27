@@ -4,6 +4,9 @@
 #include <memory>
 #include "display.h"
 #include <iostream>
+#include <chrono>
+using std::chrono::seconds;
+using std::chrono::duration_cast;
 
 namespace State
 {
@@ -42,11 +45,22 @@ namespace State
 		_text2.setCharacterSize(60);
 		_text2.setFillColor(sf::Color::Blue);
 		_text2.setPosition(300, 400);
+
+		_playerOne.cameraPosX = 100;
+		_playerOne.cameraPosY = 100;
+		_playerTwo.cameraPosX = 2900;
+		_playerTwo.cameraPosY = 100;
 	}
 
 	//This gets keyboard input
 	void GameStateServer::input(sf::Time dt)
 	{
+		//t_round = std::chrono::steady_clock::now();
+		//if (duration_cast<seconds>(t_round - t_initializer).count() % 10)
+		//{
+		//	std::cout << "round over" << std::endl;
+		//}
+		
 		checkCollisionsOfPlayers(_playerOne, _playerTwo, dt);
 
 		_playerOne.keyboardInput2(dt);
@@ -68,10 +82,6 @@ namespace State
 		{
 			_text2.setString("Right");
 		}
-		/*if (e.type == sf::Event::Closed)
-		{h
-			_game->popState();
-		}*/
 
 	}
 
@@ -89,7 +99,8 @@ namespace State
 		background.draw();
 		if (!background.checkCollisions(_playerOne))
 		{
-			Display::clear(sf::Color::Black);
+			_playerOne.rect.setPosition(100, 100);
+			Display::setView(100, 100, 1920, 1080);
 		}
 
 		_playerOne.drawToWindow();
@@ -107,8 +118,10 @@ namespace State
 		{
 			if (_listener.listen(PORT) != sf::Socket::Done)
 			{
+				std::cout << "Player Connected" << std::endl;
 				_rect.setPosition(200, 10);
 				_rect.setFillColor(sf::Color::Magenta);
+				//t_initializer = std::chrono::steady_clock::now();
 			}
 			if (_listener.accept(_socket) != sf::Socket::Done)
 			{
@@ -124,11 +137,12 @@ namespace State
 		_playerOneX = _playerOne.rect.getPosition().x;
 		_playerOneY = _playerOne.rect.getPosition().y;
 		_playerDirection = _playerOne.getDirection();
+		_playerIsIt = _playerOne._ifPlayerIsIt;
 		_globalMutex.unlock();
 
 		//This locks a message into a packet
 		_globalMutex.lock();
-		_packetSend << _playerOneX << _playerOneY << _playerDirection;
+		_packetSend << _playerOneX << _playerOneY << _playerDirection << _playerIsIt;
 		_globalMutex.unlock();
 
 		//This sends all the packets that are put 

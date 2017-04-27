@@ -27,6 +27,12 @@ public:
 	int _yDirection = 0;
 	int _playerState = 0;
 	bool _ifPlayer = true;
+	bool _ifPlayerIsIt = false;
+
+	int cameraPosX;
+	int cameraPosY;
+
+	void setPlayerCam();
 
 	bool _ifIsPlaying;
 private:
