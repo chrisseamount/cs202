@@ -31,6 +31,7 @@ void Game::gameLoop()
 		Display::display();
 
 		dt = clock.restart();
+		sf::sleep(sf::microseconds(1));
 	}
 }
 

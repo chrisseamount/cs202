@@ -33,11 +33,16 @@ namespace State
 		_text.setCharacterSize(60);
 		_text.setFillColor(sf::Color::Blue);
 		_text.setPosition(Display::HEIGHT / 2, 10);
+
+		_playerOne.cameraPosX = 2900;
+		_playerOne.cameraPosY = 100;
+		_playerTwo.cameraPosX = 100;
+		_playerTwo.cameraPosY = 100;
 	}
 	//This gets keyboard input
 	void GameStateClient::input(sf::Time dt)
 	{
-		checkCollisionsOfPlayers(_playerOne, _playerTwo,dt);
+		checkCollisionsOfPlayers( _playerOne, _playerTwo, dt);
 		_playerOne.keyboardInput(dt);
 	}
 
@@ -54,7 +59,8 @@ namespace State
 		background.draw();
 		if (!background.checkCollisions(_playerOne))
 		{
-			Display::clear(sf::Color::Black);
+			_playerOne.rect.setPosition(2900, 100);
+			Display::setView(2900, 100, 1920, 1080);
 		}
 		
 		_playerOne.drawToWindow();
@@ -71,6 +77,7 @@ namespace State
 		if (_socket.connect(IPADDRESS, PORT))
 		{
 			_text.setString("Connected");
+			std::cout << "Trying to connect" << std::endl;
 		}
 	}
 

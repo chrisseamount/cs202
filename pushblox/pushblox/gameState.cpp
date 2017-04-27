@@ -48,6 +48,8 @@ namespace State
 		if (playerOne.rect.getGlobalBounds().intersects(playerTwo.rect.getGlobalBounds()))
 		{
 			//playerOne._movementSpeed = 500;
+			
+			
 			//playerTwo._movementSpeed = 500;
 			if (playerTwo._playerState == 2)//if Playertwo has knockback ability
 			{
@@ -55,11 +57,22 @@ namespace State
 				{
 					playerOne.rect.move(playerOne._movementSpeed * dt.asSeconds(), 0); //Knockback PlayerOne Right 
 					Display::changeView(playerOne._movementSpeed * dt.asSeconds(), 0);
+					playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY );
+					Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
+					//playerTwo.rect.setPosition(2900, 100);
+
+					//playerOne.sprite.setTextureRect(sf::IntRect(96, 0, 32, 32));
+					//playerOne.startPos = 96;
+					//playerTwo.sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
+					//playerTwo.startPos = 0;
 				}
 				if (playerTwo._xDirection == -1)// Playertwo: Moving Left
 				{
 					playerOne.rect.move(-playerOne._movementSpeed * dt.asSeconds(), 0); //Knockback PlayerOne Left
 					Display::changeView(-playerOne._movementSpeed * dt.asSeconds(), 0);
+					playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+					Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
+					
 				}
 			}else{
 				//x-axis
@@ -67,11 +80,15 @@ namespace State
 				{
 					playerOne.rect.move(-playerOne._movementSpeed * dt.asSeconds(), 0);
 					Display::changeView(-playerOne._movementSpeed * dt.asSeconds(), 0);
+					playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+					Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 				}
 				if (playerOne._xDirection == -1)//Moving Left
 				{
 					playerOne.rect.move(playerOne._movementSpeed * dt.asSeconds(), 0);
 					Display::changeView(playerOne._movementSpeed * dt.asSeconds(), 0);
+					playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+					Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 				}
 
 				//y-axis
@@ -79,11 +96,15 @@ namespace State
 				{
 					playerOne.rect.move(0, playerOne._movementSpeed * dt.asSeconds());
 					Display::changeView(0, playerOne._movementSpeed * dt.asSeconds());
+					playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+					Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 				}
 				if (playerOne._yDirection == -1)//Moving down
 				{
 					playerOne.rect.move(0, -playerOne._movementSpeed * dt.asSeconds());
 					Display::changeView(0, -playerOne._movementSpeed * dt.asSeconds());
+					playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+					Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 				}
 
 
@@ -98,11 +119,15 @@ namespace State
 			{
 				playerTwo.rect.move(-playerTwo._movementSpeed * dt.asSeconds(), 0);
 				Display::changeView(-playerTwo._movementSpeed * dt.asSeconds(), 0);
+				playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+				Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 			}
 			if (playerTwo._xDirection == -1)//Moving Left
 			{
 				playerTwo.rect.move(playerTwo._movementSpeed * dt.asSeconds(), 0);
 				Display::changeView(playerTwo._movementSpeed * dt.asSeconds(), 0);
+				playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+				Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 			}
 
 			//y-axis
@@ -110,11 +135,15 @@ namespace State
 			{
 				playerTwo.rect.move(0, playerTwo._movementSpeed * dt.asSeconds());
 				Display::changeView(0, playerTwo._movementSpeed * dt.asSeconds());
+				playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+				Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 			}
 			if (playerTwo._yDirection == -1)//Moving down
 			{
 				playerTwo.rect.move(0, -playerTwo._movementSpeed * dt.asSeconds());
 				Display::changeView(0, -playerTwo._movementSpeed * dt.asSeconds());
+				playerOne.rect.setPosition(playerOne.cameraPosX, playerOne.cameraPosY);
+				Display::setView(playerOne.cameraPosX, playerOne.cameraPosY, 1920, 1080);
 			}
 		}
 		playerTwo._xDirection = 0;

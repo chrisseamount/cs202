@@ -136,3 +136,8 @@ int Player::getIsRunning() const
 {
 	return _isRunning;
 }
+
+void Player::setPlayerCam()
+{
+	Display::setView(cameraPosX, cameraPosY, 1920, 1080);
+}
