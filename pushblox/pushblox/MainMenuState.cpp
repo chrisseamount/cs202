@@ -34,41 +34,41 @@ namespace State
 		_text.setCharacterSize(60);
 		_text.setFillColor(sf::Color::Blue);
 		_text.setString("Push Blox");
-		_text.setPosition(Display::HEIGHT/2,10);
+		_text.setPosition(Display::WIDTH/2 - 147,10);
 
 		//rectangle
 		menuBorderRect.setSize(sf::Vector2f(315, 175));
 		menuBorderRect.setFillColor(sf::Color::Black);
-		menuBorderRect.setPosition(Display::HEIGHT / 2 - 15, 20);
+		menuBorderRect.setPosition(Display::WIDTH / 2 - 162, 20);
 
 		menuRect.setSize(sf::Vector2f(305, 165));
 		menuRect.setFillColor(sf::Color::White);
-		menuRect.setPosition(Display::HEIGHT/2 - 10, 25);
+		menuRect.setPosition(Display::WIDTH/2 - 157, 25);
 
 		//texts
 		hostGameText.setFont(_font);
 		hostGameText.setCharacterSize(24);
 		hostGameText.setFillColor(sf::Color::Black);
 		hostGameText.setString("Host a Game - Press 'H'");
-		hostGameText.setPosition(Display::HEIGHT / 2, 80);
+		hostGameText.setPosition(Display::WIDTH / 2 - 147, 80);
 
 		clientGameText.setFont(_font);
 		clientGameText.setCharacterSize(24);
 		clientGameText.setFillColor(sf::Color::Black);
 		clientGameText.setString("Connect to a Game - Press 'C'");
-		clientGameText.setPosition(Display::HEIGHT / 2, 105);
+		clientGameText.setPosition(Display::WIDTH / 2 - 147, 105);
 
 		settingsText.setFont(_font);
 		settingsText.setCharacterSize(24);
 		settingsText.setFillColor(sf::Color::Black);
 		settingsText.setString("Settings - Press 'S'");
-		settingsText.setPosition(Display::HEIGHT / 2,130);
+		settingsText.setPosition(Display::WIDTH / 2 - 147 ,130);
 
 		aboutText.setFont(_font);
 		aboutText.setCharacterSize(24);
 		aboutText.setFillColor(sf::Color::Black);
 		aboutText.setString("About - Press 'A'");
-		aboutText.setPosition(Display::HEIGHT / 2, 155);
+		aboutText.setPosition(Display::WIDTH / 2 - 147, 155);
 	}
 
 	//This gets keyboard input
